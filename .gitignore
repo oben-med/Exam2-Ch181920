@@ -1,0 +1,5 @@
+# Course materials — copyrighted, do not publish
+*.pdf
+# macOS/iCloud noise
+.DS_Store
+*.icloud
