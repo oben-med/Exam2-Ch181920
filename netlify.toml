@@ -1,0 +1,10 @@
+# Static site — no build step needed; the study hub is a single self-contained HTML file.
+[build]
+  command = ""
+  publish = "."
+
+# Serve the study hub at the site root
+[[redirects]]
+  from = "/"
+  to = "/Exam 2 Study Hub.html"
+  status = 200
