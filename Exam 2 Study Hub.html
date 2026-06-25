@@ -72,10 +72,24 @@
   .scorebox{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:12px 0}
   .scorebox .sb{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
   .scorebox .sb .big2{font-size:1.6rem;font-weight:800}
+  /* reaction schemes + mechanism drawings */
+  .scheme{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px 10px 8px;margin:12px 0;text-align:center;overflow-x:auto}
+  .scheme svg{max-width:100%;height:auto}
+  .scheme .cap{font-size:.86em;color:#777;margin-top:2px;line-height:1.35}
+  .scheme .cap b{color:var(--ink)}
+  .schemepair{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px}
+  .mpanel{background:#fffdf8;border:1px dashed var(--border);border-radius:10px;padding:6px 4px 2px;margin:6px 0 12px 40px;overflow-x:auto}
+  .mpanel svg{max-width:100%;height:auto}
+  @media(max-width:600px){.mpanel{margin-left:0}}
+  #fcImg svg,#qzImg svg{max-width:100%;height:auto;margin-bottom:8px}
   @media(max-width:600px){main{padding:14px} nav{padding:10px 12px}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c2410c"/></marker>
+<marker id="rh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#222"/></marker>
+</defs></svg>
 <header>
   <h1>⌬ CHM 2220 — Exam 2 Study Hub</h1>
   <div id="countdown"></div>
@@ -94,6 +108,20 @@
 <!-- ================= GAME PLAN ================= -->
 <section class="tab active" id="tab-plan">
   <h2>How to get the 100% (you got 77 — here's the gap)</h2>
+
+  <div class="win" style="border-left-color:var(--accent);background:#ede9fe">
+    <b>📧 Dr. Hickey's email (week of Jun 15) — what changed:</b>
+    <ul style="margin:8px 0 0 18px;line-height:1.6">
+      <li><b>Ch 20 may NOT be on the exam.</b> "If we get behind and don't get to chapter 20 before the exam, I am not going to be too concerned." → Treat Ch 20 as <b>last priority</b>. Don't cut it, but don't lead with it.</li>
+      <li><b>Ch 19 IS the exam.</b> He calls it "the most important chapter of the second half" <i>and</i> "the hardest chapter in Organic 2." Own Aldol, Claisen, Michael, Robinson, Malonic &amp; Acetoacetic ester synthesis cold.</li>
+      <li><b>Acyl-substitution mechanisms = one rule.</b> Every mechanism you must know is built from 5 steps, <b>PT–NA–PT–LLG–PT</b>. See the Mechanisms tab for his exact decision table. (He calls this "Chapter 17"; in your files it's the Ch 18 material — same chemistry.)</li>
+      <li><b>Pages 74–76</b> (reaction review + synthesis) are high-yield, "but don't just focus on those pages" — the mechanism nuances matter.</li>
+      <li><b>Daily non-negotiable:</b> "go through the lecture notes, then practice on the conceptual checkpoints… each day." Prepare, Practice, Practice, Practice.</li>
+    </ul>
+  </div>
+
+  <div class="note"><b>✅ Hub synced to class through June 23.</b> Every lecture so far is folded in: Ch 18 finished (acid chlorides/anhydrides → esters → amides → nitriles, all reducing-agent and Grignard/cuprate distinctions), and Ch 19 is now through <b>alpha-halogenation (incl. haloform &amp; HVZ) and the full aldol → Claisen family</b>. The June lectures added the exam-style nuances now in your Flashcards: β-lactam/penicillin, the ester "same-carbon" ID trap, N-before-O nucleophilicity, amide-vs-enamine, the α-H pKa ladder (43 → 19 → 9), and the enol-favoring exceptions. With Aldol/Claisen done, you're squarely in the highest-yield part of the exam — keep drilling Ch 19.</div>
+
   <div class="card">
     <p class="big"><b>The exam format never changes.</b> Based on Summer 2023 + all three 2025 forms: <b>200 points, ~90% is "fill in the reagent or product"</b> plus <b>one mechanism worth 20–24 pts</b>. There are usually 20 bonus points available. This exam is almost pure reaction recall + one perfectly-drawn mechanism. That means it is 100%-able by drilling.</p>
   </div>
@@ -123,24 +151,53 @@
   <div class="note"><b>2023 also had Part III: Retrosynthesis (20 pts) + Bonus retrosynthesis (15 pts)</b> — "this compound came from a Robinson annulation, give the starting reagents" and a multi-step retro ending in an intramolecular aldol. Practice working BACKWARDS: spot the cyclohexenone → disconnect to Michael donor + enone; spot β-hydroxy/enone → disconnect at the α,β bond.</div>
   <div class="win"><b>Where your 23 points probably go missing:</b> on this exam style, points die in three places — (1) picking the wrong reducing agent / base, (2) forgetting workup steps (the "2. H₂O" / "3. H₃O⁺, heat"), and (3) sloppy mechanism arrows. The keys explicitly grade arrow origin/end points. Drill those three and 100% is realistic.</div>
 
-  <h3>Your 23-day schedule (today → July 2)</h3>
+  <h3>Your schedule (today → July 2) — rebuilt around the email</h3>
+  <div class="note"><b>You said you're shaky on Ch 18 — so Ch 18 leads.</b> Get the acyl ladder + the PT-NA-PT-LLG-PT rule automatic first; everything in Ch 19 (Claisen, Aldol, ester syntheses) is the SAME enolate-attacks-carbonyl logic, so solid Ch 18 makes Ch 19 click.</div>
   <table class="weekgrid">
     <tr><th>Dates</th><th>Focus</th><th>Goal</th></tr>
-    <tr><td>Jun 9–13</td><td><span class="tag18">Ch 18</span> — learn every reaction in the Ch 18 tab, do "Chapter 18 Reaction Practice.pdf", check with key</td><td>Acid chloride wheel from memory</td></tr>
-    <tr><td>Jun 14–19</td><td><span class="tag19">Ch 19</span> — biggest chapter. Aldol → Claisen → alkylation → malonic/acetoacetic → Michael/Stork/Robinson. Do "Chapter 19 Reaction Practice.pdf"</td><td>Pick the right base every time</td></tr>
-    <tr><td>Jun 20–22</td><td><span class="tag20">Ch 20</span> — Diels-Alder regio + stereo until automatic. Do "Chapter 20 Practice Reactions.pdf"</td><td>Endo + "ortho/para" rules cold</td></tr>
-    <tr><td>Jun 23–25</td><td><b>Mechanisms week:</b> write Claisen, aldol addition, aldol condensation, and acid-chloride esterification mechanisms from blank paper daily</td><td>Perfect arrows, no peeking</td></tr>
-    <tr><td>Jun 26–28</td><td><b>Exam 2 Summer 2023</b> + <b>2025 Form A</b>, timed, no notes. Grade with keys. Re-drill every miss with flashcards here</td><td>≥ 180/200</td></tr>
-    <tr><td>Jun 29–30</td><td><b>2025 Forms B &amp; C</b> timed. Quiz Me tab until ≥95% on all chapters</td><td>≥ 190/200</td></tr>
-    <tr><td>Jul 1</td><td>Light review only: prof's "Exam #2 Reaction Review.pdf" + your misses. Sleep.</td><td>Confidence</td></tr>
+    <tr><td>Jun 16–19</td><td><span class="tag18">Ch 18 — SHORE THIS UP.</span> Read the Ch 18 tab top to bottom, then do the new <b>Chapter 18 Mastery Worksheet</b> on blank paper + "Chapter 18 Reaction Practice.pdf". Mechanism step-counting (PT-NA-PT-LLG-PT) until automatic.</td><td>Acid-chloride wheel + reducing-agent grid from memory</td></tr>
+    <tr><td>Jun 20–25</td><td><span class="tag19">Ch 19 — the exam.</span> Aldol → Claisen → alkylation (base choice) → malonic/acetoacetic → Michael/Stork/Robinson. Do "Chapter 19 Reaction Practice.pdf". This is the biggest + hardest chapter; give it the most days.</td><td>Pick the right base every time; build any enolate reaction</td></tr>
+    <tr><td>Jun 26–27</td><td><b>Mechanisms:</b> write Claisen, aldol addition, aldol condensation, and acid-chloride esterification from blank paper daily. Every arrow origin→destination.</td><td>Perfect arrows, no peeking</td></tr>
+    <tr><td>Jun 28–29</td><td><b>Exam 2 Summer 2023</b> + <b>2025 Form A</b>, timed, no notes. Grade with keys. Re-drill every miss in Quiz Me.</td><td>≥ 180/200</td></tr>
+    <tr><td>Jun 30</td><td><b>2025 Forms B &amp; C</b> timed. Quiz Me until ≥95% on Ch 18 + 19.</td><td>≥ 190/200</td></tr>
+    <tr><td>Jul 1</td><td><span class="tag20">Ch 20 (Diels–Alder) ONLY IF the prof confirms it's tested</span> — quick regio/stereo pass. Otherwise: prof's "Exam #2 Reaction Review.pdf" + your misses. Sleep.</td><td>Confidence</td></tr>
     <tr><td><b>Jul 2</b></td><td>🎯 <b>EXAM — skim whole exam first, mechanism Q last, budget time by points</b></td><td>100%</td></tr>
   </table>
-  <div class="note"><b>Daily non-negotiable (15 min):</b> one pass of the Flashcards tab. Spaced repetition is what makes you <i>remember</i> — cramming is what got 77.</div>
+  <div class="note"><b>Daily non-negotiable (the prof said this 3×):</b> go through lecture notes, then one pass of the Flashcards tab + the conceptual checkpoints. Spaced repetition is what makes you <i>remember</i> — cramming is what got 77.</div>
+  <div class="trap"><b>Confirm with Dr. Hickey:</b> (1) Is Ch 20 / Diels–Alder on Exam 2? (2) Which handout are "pages 74–76"? Two quick questions that decide where your last days go.</div>
 </section>
 
 <!-- ================= CH 18 ================= -->
 <section class="tab" id="tab-ch18">
   <h2 style="border-color:var(--ch18)">Ch 18 — Carboxylic Acid Derivatives (Nucleophilic Acyl Substitution)</h2>
+
+  <div class="win" style="border-left-color:var(--ch18);background:#dbeafe">
+    <b>🧭 START HERE — the one idea that makes this whole chapter easy.</b>
+    <p style="margin:8px 0 0">There is really only <b>ONE reaction</b> in this chapter: a nucleophile kicks out a leaving group on a C=O carbon. Everything else is just bookkeeping on top of that:</p>
+    <ol style="margin:8px 0 0 18px;line-height:1.6">
+      <li><b>WHICH derivative am I starting from?</b> That sets how reactive it is and what the leaving group is (the <b>Reactivity Ladder</b> below).</li>
+      <li><b>WHAT is the nucleophile?</b> Water, alcohol, amine, hydride, carbon (Grignard/cuprate)… that decides the product.</li>
+      <li><b>HOW does the mechanism run?</b> Always the same 5-step skeleton — <b>PT-NA-PT-LLG-PT</b> — and the number of steps depends only on whether the nucleophile is acid-catalyzed (5), neutral (3), or negative (2). <span class="rxn">→ full rule in the Mechanisms tab</span></li>
+    </ol>
+    <p style="margin:8px 0 0"><b>Rule of the ladder:</b> you can only convert a <i>more</i> reactive derivative into a <i>less</i> reactive one (down the ladder). To climb back up you must hydrolyze to the carboxylic acid, then re-activate with SOCl₂. Memorize the ladder picture and the reagent-decision guide just below, and 80% of Ch 18 questions answer themselves.</p>
+  </div>
+
+  <h3>Decision guide — "I have an acid chloride, which reagent gives which product?"</h3>
+  <div class="card">
+    <p style="margin:0 0 8px">When a fill-in shows RCOCl (or any derivative) and an unknown reagent, run this checklist. Reverse it when they give the product and ask for the reagent.</p>
+    <table>
+      <tr><th>I want to end at…</th><th>Reagent to use</th><th>The trap they set</th></tr>
+      <tr><td><b>Carboxylic acid</b></td><td>H₂O (+ H⁺/heat for sluggish ones)</td><td>—</td></tr>
+      <tr><td><b>Ester</b></td><td>R′OH + pyridine (or R′O⁻)</td><td>without pyridine the HCl ruins it</td></tr>
+      <tr><td><b>Amide</b></td><td>2 eq amine (xs NH₃ / RNH₂ / R₂NH)</td><td>need the 2nd equiv to eat HCl</td></tr>
+      <tr><td><b>Anhydride</b></td><td>carboxylate RCO₂⁻</td><td>—</td></tr>
+      <tr><td><b>1° alcohol</b></td><td>1) LiAlH₄ (xs) 2) H₂O</td><td>NaBH₄ also works on RCOCl, not on esters/acids</td></tr>
+      <tr><td><b>Aldehyde (STOP)</b></td><td>1) LTBA 2) H₂O <span style="color:#777">(ester→aldehyde uses DIBAH, −78°)</span></td><td>LAH would go all the way to alcohol</td></tr>
+      <tr><td><b>Ketone (STOP)</b></td><td>R′₂CuLi (Gilman, adds once)</td><td>Grignard can't stop — gives 3° alcohol</td></tr>
+      <tr><td><b>3° alcohol</b></td><td>1) xs R′MgBr 2) H₂O (two R′ added)</td><td>count BOTH new R′ groups</td></tr>
+    </table>
+    <p style="margin:8px 0 0"><b>The three "stop here" reagents are the most-tested discriminator on this exam:</b> LTBA (acid chloride→aldehyde), DIBAH (ester/nitrile→aldehyde), Gilman cuprate (→ketone). If you can explain why each one stops, you've got the hardest Ch 18 points.</p>
+  </div>
 
   <h3>Functional-group gallery — recognize these on sight</h3>
   <div class="fgrid">
@@ -192,6 +249,29 @@
     <tr><td>1) xs R′MgBr 2) H₂O</td><td><b>3° alcohol</b> (2 R′ added)</td><td>Grignard CANNOT stop at ketone</td></tr>
     <tr><td>R′₂CuLi (Gilman)</td><td><b>Ketone</b> — adds once only</td><td>the ONLY way to stop at ketone; Gilman is also <b>chemoselective: reacts ONLY with acid chlorides</b> (and 1,4 on enones) — leaves aldehydes, ketones, esters, amides, nitriles &amp; anhydrides untouched</td></tr>
   </table>
+  <p style="margin:10px 0 2px;font-weight:700">See the wheel, don't memorize strings — same acid chloride, five fates:</p>
+  <div class="schemepair">
+    <div class="scheme"><svg viewBox="0 0 300 100" width="300">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="62" x2="45" y2="48"/><line x1="42" y1="46" x2="42" y2="24"/><line x1="48" y1="46" x2="48" y2="24"/><line x1="46" y1="50" x2="70" y2="62"/><line x1="100" y1="55" x2="165" y2="55" marker-end="url(#rh)"/><line x1="175" y1="62" x2="200" y2="48"/><line x1="197" y1="46" x2="197" y2="24"/><line x1="203" y1="46" x2="203" y2="24"/><line x1="201" y1="50" x2="225" y2="62"/></g>
+      <g font-size="14" text-anchor="middle"><text x="45" y="18" fill="#d11">O</text><text x="10" y="68">R</text><text x="82" y="68" fill="#190" font-size="13">Cl</text><text x="132" y="42" font-size="11" fill="#555">R′OH</text><text x="132" y="74" font-size="11" fill="#555">pyridine</text><text x="200" y="18" fill="#d11">O</text><text x="165" y="68">R</text><text x="235" y="68" fill="#d11">O</text><text x="258" y="68" font-size="13">R′</text></g>
+    </svg><div class="cap"><b>→ Ester</b> (pyridine eats the HCl)</div></div>
+    <div class="scheme"><svg viewBox="0 0 300 100" width="300">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="62" x2="45" y2="48"/><line x1="42" y1="46" x2="42" y2="24"/><line x1="48" y1="46" x2="48" y2="24"/><line x1="46" y1="50" x2="70" y2="62"/><line x1="100" y1="55" x2="165" y2="55" marker-end="url(#rh)"/><line x1="175" y1="62" x2="200" y2="48"/><line x1="197" y1="46" x2="197" y2="24"/><line x1="203" y1="46" x2="203" y2="24"/><line x1="201" y1="50" x2="225" y2="62"/></g>
+      <g font-size="14" text-anchor="middle"><text x="45" y="18" fill="#d11">O</text><text x="10" y="68">R</text><text x="82" y="68" fill="#190" font-size="13">Cl</text><text x="132" y="42" font-size="11" fill="#555">xs NH₃</text><text x="132" y="74" font-size="11" fill="#555">(2 eq)</text><text x="200" y="18" fill="#d11">O</text><text x="165" y="68">R</text><text x="242" y="68" fill="#15c" font-size="13">NH₂</text></g>
+    </svg><div class="cap"><b>→ Amide</b> (2nd equiv mops up HCl)</div></div>
+    <div class="scheme"><svg viewBox="0 0 300 100" width="300">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="62" x2="45" y2="48"/><line x1="42" y1="46" x2="42" y2="24"/><line x1="48" y1="46" x2="48" y2="24"/><line x1="46" y1="50" x2="70" y2="62"/><line x1="100" y1="55" x2="165" y2="55" marker-end="url(#rh)"/><line x1="175" y1="62" x2="200" y2="48"/><line x1="197" y1="46" x2="197" y2="24"/><line x1="203" y1="46" x2="203" y2="24"/><line x1="201" y1="50" x2="225" y2="62"/></g>
+      <g font-size="14" text-anchor="middle"><text x="45" y="18" fill="#d11">O</text><text x="10" y="68">R</text><text x="82" y="68" fill="#190" font-size="13">Cl</text><text x="132" y="42" font-size="11" fill="#555">R′₂CuLi</text><text x="132" y="74" font-size="11" fill="#555">(adds ONCE)</text><text x="200" y="18" fill="#d11">O</text><text x="165" y="68">R</text><text x="237" y="68" font-size="13">R′</text></g>
+    </svg><div class="cap"><b>→ Ketone</b> — cuprate is the only way to stop here</div></div>
+    <div class="scheme"><svg viewBox="0 0 300 100" width="300">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="62" x2="45" y2="48"/><line x1="42" y1="46" x2="42" y2="24"/><line x1="48" y1="46" x2="48" y2="24"/><line x1="46" y1="50" x2="70" y2="62"/><line x1="100" y1="55" x2="165" y2="55" marker-end="url(#rh)"/><line x1="175" y1="62" x2="200" y2="48"/><line x1="197" y1="46" x2="197" y2="24"/><line x1="203" y1="46" x2="203" y2="24"/><line x1="201" y1="50" x2="225" y2="62"/></g>
+      <g font-size="14" text-anchor="middle"><text x="45" y="18" fill="#d11">O</text><text x="10" y="68">R</text><text x="82" y="68" fill="#190" font-size="13">Cl</text><text x="132" y="42" font-size="11" fill="#555">1) LTBA</text><text x="132" y="74" font-size="11" fill="#555">2) H₂O</text><text x="200" y="18" fill="#d11">O</text><text x="165" y="68">R</text><text x="234" y="68">H</text></g>
+    </svg><div class="cap"><b>→ Aldehyde</b> — bulky hydride, one H, stops</div></div>
+    <div class="scheme"><svg viewBox="0 0 300 100" width="300">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="62" x2="45" y2="48"/><line x1="42" y1="46" x2="42" y2="24"/><line x1="48" y1="46" x2="48" y2="24"/><line x1="46" y1="50" x2="70" y2="62"/><line x1="100" y1="55" x2="165" y2="55" marker-end="url(#rh)"/><line x1="195" y1="42" x2="212" y2="48"/><line x1="215" y1="48" x2="215" y2="28"/><line x1="218" y1="53" x2="240" y2="66"/><line x1="213" y1="54" x2="193" y2="68"/></g>
+      <g font-size="14" text-anchor="middle"><text x="45" y="18" fill="#d11">O</text><text x="10" y="68">R</text><text x="82" y="68" fill="#190" font-size="13">Cl</text><text x="132" y="42" font-size="11" fill="#555">1) xs R′MgBr</text><text x="132" y="74" font-size="11" fill="#555">2) H₂O</text><text x="185" y="38" font-size="13">R</text><text x="215" y="22" fill="#d11" font-size="13">OH</text><text x="256" y="72" font-size="13">R′</text><text x="181" y="76" font-size="13">R′</text></g>
+    </svg><div class="cap"><b>→ 3° Alcohol</b> — Grignard adds TWICE, can't stop</div></div>
+  </div>
   <div class="note"><b>Anhydrides:</b> identical product list — the leaving group is just the whole carboxylate half. Prep: RCOCl + RCO₂⁻, or RCOOH + heat (less useful), or RCOOH + CH₃COCl.</div>
 
   <h3>Reducing agent discrimination grid <span class="hy">HIGH YIELD</span></h3>
@@ -224,6 +304,24 @@
     <tr><td>+ 1) xs LAH 2) H₂O</td><td></td><td>1° alcohol (+ R′OH)</td></tr>
     <tr><td>+ 1) DIBAH 2) H₂O</td><td></td><td>aldehyde</td></tr>
   </table>
+  <div class="schemepair">
+    <div class="scheme"><svg viewBox="0 0 320 110" width="320">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="66" x2="45" y2="52"/><line x1="42" y1="50" x2="42" y2="28"/><line x1="48" y1="50" x2="48" y2="28"/><line x1="46" y1="54" x2="70" y2="66"/><line x1="115" y1="58" x2="180" y2="58" marker-end="url(#rh)"/><line x1="215" y1="46" x2="232" y2="52"/><line x1="235" y1="52" x2="235" y2="32"/><line x1="238" y1="57" x2="260" y2="70"/><line x1="233" y1="58" x2="213" y2="72"/></g>
+      <g font-size="14" text-anchor="middle"><text x="45" y="22" fill="#d11">O</text><text x="10" y="72">R</text><text x="80" y="72" fill="#d11" font-size="13">O</text><text x="98" y="72" font-size="13">Et</text><text x="147" y="44" font-size="11" fill="#555">1) xs R″MgBr</text><text x="147" y="76" font-size="11" fill="#555">2) H₂O</text><text x="205" y="42" font-size="13">R</text><text x="235" y="26" fill="#d11" font-size="13">OH</text><text x="276" y="76" font-size="13">R″</text><text x="201" y="80" font-size="13">R″</text></g>
+    </svg><div class="cap"><b>Ester + 2 eq Grignard → 3° alcohol</b> (two R″ groups; + EtOH)</div></div>
+    <div class="scheme"><svg viewBox="0 0 320 110" width="320">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="66" x2="45" y2="52"/><line x1="42" y1="50" x2="42" y2="28"/><line x1="48" y1="50" x2="48" y2="28"/><line x1="46" y1="54" x2="70" y2="66"/><line x1="115" y1="58" x2="180" y2="58" marker-end="url(#rh)"/><line x1="195" y1="66" x2="220" y2="52"/><line x1="217" y1="50" x2="217" y2="28"/><line x1="223" y1="50" x2="223" y2="28"/><line x1="222" y1="54" x2="244" y2="66"/></g>
+      <g font-size="14" text-anchor="middle"><text x="45" y="22" fill="#d11">O</text><text x="10" y="72">R</text><text x="80" y="72" fill="#d11" font-size="13">O</text><text x="98" y="72" font-size="13">Et</text><text x="147" y="44" font-size="11" fill="#555">1) DIBAH, −78°</text><text x="147" y="76" font-size="11" fill="#555">2) H₂O</text><text x="220" y="22" fill="#d11">O</text><text x="185" y="72">R</text><text x="253" y="72">H</text></g>
+    </svg><div class="cap"><b>Ester + DIBAL → aldehyde</b> (1 stingy hydride, stops)</div></div>
+    <div class="scheme"><svg viewBox="0 0 320 110" width="320">
+      <g stroke="#222" stroke-width="2"><line x1="22" y1="58" x2="48" y2="58"/><line x1="50" y1="52" x2="82" y2="52"/><line x1="50" y1="58" x2="82" y2="58"/><line x1="50" y1="64" x2="82" y2="64"/><line x1="115" y1="58" x2="180" y2="58" marker-end="url(#rh)"/><line x1="195" y1="66" x2="220" y2="52"/><line x1="217" y1="50" x2="217" y2="28"/><line x1="223" y1="50" x2="223" y2="28"/><line x1="222" y1="54" x2="244" y2="66"/></g>
+      <g font-size="14" text-anchor="middle"><text x="12" y="64">R</text><text x="94" y="64" fill="#15c">N</text><text x="147" y="44" font-size="11" fill="#555">1) DIBAH, −78°</text><text x="147" y="76" font-size="11" fill="#555">2) H₂O</text><text x="220" y="22" fill="#d11">O</text><text x="185" y="72">R</text><text x="253" y="72">H</text></g>
+    </svg><div class="cap"><b>Nitrile + DIBAL → aldehyde</b> (imine, hydrolyzed on workup)</div></div>
+    <div class="scheme"><svg viewBox="0 0 320 110" width="320">
+      <g stroke="#222" stroke-width="2"><line x1="22" y1="58" x2="48" y2="58"/><line x1="50" y1="52" x2="82" y2="52"/><line x1="50" y1="58" x2="82" y2="58"/><line x1="50" y1="64" x2="82" y2="64"/><line x1="115" y1="58" x2="180" y2="58" marker-end="url(#rh)"/><line x1="195" y1="66" x2="220" y2="52"/><line x1="217" y1="50" x2="217" y2="28"/><line x1="223" y1="50" x2="223" y2="28"/><line x1="222" y1="54" x2="244" y2="66"/></g>
+      <g font-size="14" text-anchor="middle"><text x="12" y="64">R</text><text x="94" y="64" fill="#15c">N</text><text x="147" y="44" font-size="11" fill="#555">1) R′MgBr</text><text x="147" y="76" font-size="11" fill="#555">2) H₃O⁺</text><text x="220" y="22" fill="#d11">O</text><text x="185" y="72">R</text><text x="256" y="72" font-size="13">R′</text></g>
+    </svg><div class="cap"><b>Nitrile + Grignard → ketone</b> (adds once to C≡N)</div></div>
+  </div>
 
   <h3>Amides &amp; Nitriles</h3>
   <table>
@@ -286,6 +384,10 @@
     <p style="margin-top:8px"><b>When is it condensation vs addition?</b> No heat → addition (β-OH). Heat → condensation (enone). <b>Conjugation possible in the product (e.g., aryl partner) → ALWAYS condensation regardless of temperature.</b> Cyclization → always condensation.</p>
     <p style="margin-top:8px"><b>Retro-aldol:</b> heat + base runs it backwards — recognize β-hydroxy carbonyls.</p>
   </div>
+  <div class="scheme"><svg viewBox="0 0 560 110" width="560">
+    <g stroke="#222" stroke-width="2"><line x1="44" y1="74" x2="69" y2="58"/><line x1="66" y1="56" x2="66" y2="32"/><line x1="72" y1="56" x2="72" y2="32"/><line x1="71" y1="60" x2="93" y2="72"/><line x1="115" y1="60" x2="163" y2="60" marker-end="url(#rh)"/><line x1="199" y1="74" x2="224" y2="58"/><line x1="224" y1="56" x2="224" y2="38"/><line x1="224" y1="58" x2="249" y2="74"/><line x1="249" y1="74" x2="274" y2="58"/><line x1="271" y1="56" x2="271" y2="32"/><line x1="277" y1="56" x2="277" y2="32"/><line x1="276" y1="60" x2="298" y2="72"/><line x1="325" y1="60" x2="373" y2="60" marker-end="url(#rh)"/><line x1="409" y1="74" x2="431" y2="60"/><line x1="434" y1="58" x2="459" y2="74"/><line x1="437" y1="51" x2="462" y2="67"/><line x1="459" y1="74" x2="479" y2="60"/><line x1="481" y1="58" x2="481" y2="34"/><line x1="487" y1="58" x2="487" y2="34"/><line x1="486" y1="62" x2="506" y2="73"/></g>
+    <g font-size="14" text-anchor="middle"><text x="14" y="66" font-size="13">2 ×</text><text x="32" y="80" font-size="13">CH₃</text><text x="69" y="26" fill="#d11">O</text><text x="101" y="78">H</text><text x="139" y="46" font-size="11" fill="#555">NaOH, H₂O</text><text x="185" y="80" font-size="13">CH₃</text><text x="224" y="32" fill="#d11" font-size="13">OH</text><text x="209" y="50" fill="#777" font-size="10">β</text><text x="249" y="91" fill="#777" font-size="10">α</text><text x="274" y="26" fill="#d11">O</text><text x="306" y="78">H</text><text x="349" y="46" font-size="11" fill="#555">heat (−H₂O)</text><text x="395" y="80" font-size="13">CH₃</text><text x="484" y="28" fill="#d11">O</text><text x="514" y="79">H</text></g>
+  </svg><div class="cap"><b>Aldol in pictures:</b> 2 acetaldehyde → <b>β-hydroxy aldehyde</b> (addition, cold) → heat → <b>conjugated enone</b> (condensation). The new C–C bond is always α-of-one to carbonyl-C-of-the-other.</div></div>
 
   <h3>Claisen condensation <span class="hy">MECHANISM TESTED (2025 A &amp; B)</span></h3>
   <div class="card">
@@ -295,6 +397,10 @@
     <p style="margin-top:8px"><b>Claisen prerequisites (2023 lecture):</b> the α-carbon needs <b>≥ 2 H's</b> (the final deprotonation between the two C=O's is what drives the equilibrium forward — no 2nd α-H, no Claisen). And <b>NEVER use NaOH</b> on an ester — it saponifies instead.</p>
     <p style="margin-top:8px"><b>Crossed Claisen:</b> clean when one ester has no α-H (e.g., ethyl benzoate + ethyl acetate → benzoylacetate). The textbook's full <b>no-α-H acceptor list</b> (use it in excess): <b>ethyl formate</b> (HCO₂Et → installs CHO), <b>diethyl carbonate</b> (→ installs CO₂Et, makes a malonate-type diester), <b>diethyl oxalate</b>, <b>ethyl benzoate</b>.</p>
   </div>
+  <div class="scheme"><svg viewBox="0 0 560 110" width="560">
+    <g stroke="#222" stroke-width="2"><line x1="44" y1="74" x2="69" y2="58"/><line x1="66" y1="56" x2="66" y2="32"/><line x1="72" y1="56" x2="72" y2="32"/><line x1="71" y1="60" x2="93" y2="72"/><line x1="150" y1="60" x2="205" y2="60" marker-end="url(#rh)"/><line x1="244" y1="74" x2="269" y2="58"/><line x1="266" y1="56" x2="266" y2="32"/><line x1="272" y1="56" x2="272" y2="32"/><line x1="269" y1="58" x2="294" y2="74"/><line x1="294" y1="74" x2="319" y2="58"/><line x1="316" y1="56" x2="316" y2="32"/><line x1="322" y1="56" x2="322" y2="32"/><line x1="319" y1="58" x2="344" y2="74"/></g>
+    <g font-size="14" text-anchor="middle"><text x="14" y="66" font-size="13">2 ×</text><text x="32" y="80" font-size="13">CH₃</text><text x="69" y="26" fill="#d11">O</text><text x="103" y="78" fill="#d11" font-size="13">O</text><text x="121" y="78" font-size="13">Et</text><text x="177" y="44" font-size="11" fill="#555">1) NaOEt</text><text x="177" y="76" font-size="11" fill="#555">2) H₃O⁺</text><text x="230" y="80" font-size="13">CH₃</text><text x="269" y="26" fill="#d11">O</text><text x="294" y="91" fill="#777" font-size="10">α</text><text x="319" y="26" fill="#d11">O</text><text x="354" y="80" fill="#d11" font-size="13">O</text><text x="372" y="80" font-size="13">Et</text><text x="450" y="66" font-size="13" fill="#777">+ EtOH</text></g>
+  </svg><div class="cap"><b>Claisen in pictures:</b> 2 ethyl acetate → <b>β-ketoester</b> (ethyl acetoacetate). Looks like aldol, but OEt⁻ got kicked out, so the C=O comes back instead of staying an alcohol.</div></div>
 
   <h3>Alkylation: malonic &amp; acetoacetic ester syntheses <span class="hy">HIGH YIELD</span></h3>
   <table>
@@ -305,6 +411,16 @@
     <tr><td>…double alkylation</td><td>same pattern, two RX</td><td>RR′CH–COCH₃</td></tr>
   </table>
   <div class="note"><b>Decarboxylation</b> (H₃O⁺ + heat) only works for β-keto acids and malonic-type diacids: the carboxyl β to a C=O leaves as CO₂ via a 6-membered cyclic TS. Malonic → acid product; acetoacetic → ketone product. <b>Memory hook: malonic = "make an acid", acetoacetic = "make acetone".</b></div>
+  <div class="schemepair">
+    <div class="scheme"><svg viewBox="0 0 380 115" width="380">
+      <g stroke="#222" stroke-width="2"><line x1="45" y1="74" x2="67" y2="60"/><line x1="64" y1="58" x2="64" y2="34"/><line x1="70" y1="58" x2="70" y2="34"/><line x1="67" y1="60" x2="92" y2="76"/><line x1="92" y1="76" x2="117" y2="60"/><line x1="114" y1="58" x2="114" y2="34"/><line x1="120" y1="58" x2="120" y2="34"/><line x1="119" y1="62" x2="139" y2="74"/><line x1="190" y1="62" x2="252" y2="62" marker-end="url(#rh)"/><line x1="285" y1="74" x2="310" y2="58"/><line x1="310" y1="58" x2="335" y2="74"/><line x1="332" y1="72" x2="332" y2="48"/><line x1="338" y1="72" x2="338" y2="48"/><line x1="338" y1="77" x2="350" y2="83"/></g>
+      <g font-size="14" text-anchor="middle"><text x="14" y="80" font-size="13">Et</text><text x="32" y="80" fill="#d11" font-size="13">O</text><text x="67" y="28" fill="#d11">O</text><text x="117" y="28" fill="#d11">O</text><text x="149" y="80" fill="#d11" font-size="13">O</text><text x="167" y="80" font-size="13">Et</text><text x="221" y="36" font-size="11" fill="#555">1) NaOEt 2) R–Br</text><text x="221" y="80" font-size="11" fill="#555">3) H₃O⁺, heat (−CO₂)</text><text x="273" y="80" font-size="13">R</text><text x="335" y="42" fill="#d11">O</text><text x="364" y="89" fill="#d11" font-size="13">OH</text></g>
+    </svg><div class="cap"><b>Malonic ester synthesis → substituted acetic ACID</b> (R on the α-carbon, one CO₂Et lost as CO₂)</div></div>
+    <div class="scheme"><svg viewBox="0 0 380 115" width="380">
+      <g stroke="#222" stroke-width="2"><line x1="36" y1="74" x2="58" y2="60"/><line x1="55" y1="58" x2="55" y2="34"/><line x1="61" y1="58" x2="61" y2="34"/><line x1="58" y1="60" x2="83" y2="76"/><line x1="83" y1="76" x2="108" y2="60"/><line x1="105" y1="58" x2="105" y2="34"/><line x1="111" y1="58" x2="111" y2="34"/><line x1="110" y1="62" x2="130" y2="74"/><line x1="190" y1="62" x2="252" y2="62" marker-end="url(#rh)"/><line x1="285" y1="74" x2="310" y2="58"/><line x1="310" y1="58" x2="335" y2="74"/><line x1="332" y1="72" x2="332" y2="48"/><line x1="338" y1="72" x2="338" y2="48"/><line x1="338" y1="77" x2="356" y2="86"/></g>
+      <g font-size="14" text-anchor="middle"><text x="20" y="80" font-size="13">CH₃</text><text x="58" y="28" fill="#d11">O</text><text x="108" y="28" fill="#d11">O</text><text x="140" y="80" fill="#d11" font-size="13">O</text><text x="158" y="80" font-size="13">Et</text><text x="221" y="36" font-size="11" fill="#555">1) NaOEt 2) R–Br</text><text x="221" y="80" font-size="11" fill="#555">3) H₃O⁺, heat (−CO₂)</text><text x="273" y="80" font-size="13">R</text><text x="335" y="42" fill="#d11">O</text><text x="372" y="92" font-size="13">CH₃</text></g>
+    </svg><div class="cap"><b>Acetoacetic ester synthesis → substituted methyl KETONE</b> (ester half lost as CO₂, ketone half survives)</div></div>
+  </div>
   <div class="trap"><b>Trap:</b> RX must be methyl/1°(/allylic/benzylic) — it's SN2. No 3° halides, no aryl/vinyl halides. Need a group that WOULD require a 3° halide? You can't alkylate it in — use a <b>Michael addition</b> to the matching α,β-unsaturated ketone instead (practice key 21.37).</div>
   <h3>Baeyer–Villiger oxidation (MCPBA + ketone → ESTER) — 2023 lecture</h3>
   <div class="card">
@@ -336,7 +452,26 @@
     <tr><td><b>Stork enamine</b></td><td>1) R₂NH, [H⁺], (−H₂O) → enamine 2) enone (Michael) 3) H₃O⁺</td><td>1,5-dicarbonyl (enamine = gentle enolate substitute)</td></tr>
     <tr><td><b>Robinson annulation</b></td><td>ketone + MVK-type enone, NaOH, heat (Michael then intramolecular aldol condensation)</td><td>new <b>cyclohexenone ring</b></td></tr>
   </table>
+  <div class="scheme"><svg viewBox="0 0 640 150" width="640">
+    <g stroke="#222" stroke-width="2"><line x1="45" y1="80" x2="67" y2="66"/><line x1="64" y1="64" x2="64" y2="40"/><line x1="70" y1="64" x2="70" y2="40"/><line x1="67" y1="66" x2="92" y2="82"/><line x1="92" y1="82" x2="117" y2="66"/><line x1="114" y1="64" x2="114" y2="40"/><line x1="120" y1="64" x2="120" y2="40"/><line x1="119" y1="68" x2="139" y2="80"/><line x1="200" y1="86" x2="225" y2="70"/><line x1="203" y1="92" x2="228" y2="76"/><line x1="225" y1="70" x2="250" y2="86"/><line x1="247" y1="84" x2="247" y2="60"/><line x1="253" y1="84" x2="253" y2="60"/><line x1="252" y1="88" x2="272" y2="98"/><line x1="305" y1="75" x2="360" y2="75" marker-end="url(#rh)"/><line x1="417" y1="68" x2="398" y2="56"/><line x1="417" y1="76" x2="398" y2="88"/><line x1="423" y1="74" x2="448" y2="88"/><line x1="448" y1="88" x2="473" y2="72"/><line x1="473" y1="72" x2="498" y2="88"/><line x1="495" y1="86" x2="495" y2="62"/><line x1="501" y1="86" x2="501" y2="62"/><line x1="501" y1="90" x2="523" y2="100"/></g>
+    <g font-size="14" text-anchor="middle"><text x="14" y="86" font-size="13">Et</text><text x="32" y="86" fill="#d11" font-size="13">O</text><text x="67" y="34" fill="#d11">O</text><text x="117" y="34" fill="#d11">O</text><text x="149" y="86" fill="#d11" font-size="13">O</text><text x="167" y="86" font-size="13">Et</text><text x="172" y="80">+</text><text x="250" y="54" fill="#d11">O</text><text x="288" y="104" font-size="13">CH₃</text><text x="332" y="60" font-size="11" fill="#555">NaOEt</text><text x="332" y="92" font-size="11" fill="#555">then H₃O⁺</text><text x="380" y="52" font-size="12">CO₂Et</text><text x="380" y="98" font-size="12">CO₂Et</text><text x="498" y="56" fill="#d11">O</text><text x="539" y="106" font-size="13">CH₃</text><text x="448" y="106" fill="#777" font-size="10">1,5 ↔</text></g>
+  </svg><div class="cap"><b>Michael in pictures:</b> malonate (stabilized enolate) adds to the <b>β-carbon</b> of MVK → <b>1,5-dicarbonyl</b>. Count it: C=O, α, β-new-bond, then two carbons to the ketone C=O.</div></div>
+  <div class="scheme"><svg viewBox="0 0 620 150" width="620">
+    <g stroke="#222" stroke-width="2"><line x1="60" y1="45" x2="86" y2="60"/><line x1="86" y1="60" x2="86" y2="90"/><line x1="86" y1="90" x2="60" y2="105"/><line x1="60" y1="105" x2="34" y2="90"/><line x1="34" y1="90" x2="34" y2="60"/><line x1="34" y1="60" x2="60" y2="45"/><line x1="57" y1="43" x2="57" y2="27"/><line x1="63" y1="43" x2="63" y2="27"/><line x1="125" y1="86" x2="150" y2="70"/><line x1="128" y1="92" x2="153" y2="76"/><line x1="150" y1="70" x2="175" y2="86"/><line x1="172" y1="84" x2="172" y2="60"/><line x1="178" y1="84" x2="178" y2="60"/><line x1="177" y1="88" x2="199" y2="98"/><line x1="235" y1="78" x2="295" y2="78" marker-end="url(#rh)"/><line x1="350" y1="45" x2="376" y2="60"/><line x1="376" y1="60" x2="376" y2="90"/><line x1="376" y1="90" x2="350" y2="105"/><line x1="350" y1="105" x2="324" y2="90"/><line x1="324" y1="90" x2="324" y2="60"/><line x1="324" y1="60" x2="350" y2="45"/><line x1="376" y1="60" x2="402" y2="45"/><line x1="402" y1="45" x2="428" y2="60"/><line x1="428" y1="60" x2="428" y2="90"/><line x1="428" y1="90" x2="402" y2="105"/><line x1="402" y1="105" x2="376" y2="90"/><line x1="382" y1="64" x2="382" y2="86"/><line x1="399" y1="43" x2="399" y2="27"/><line x1="405" y1="43" x2="405" y2="27"/></g>
+    <g font-size="14" text-anchor="middle"><text x="60" y="21" fill="#d11">O</text><text x="105" y="84">+</text><text x="175" y="54" fill="#d11">O</text><text x="215" y="104" font-size="13">CH₃</text><text x="265" y="62" font-size="11" fill="#555">NaOH, heat</text><text x="265" y="94" font-size="10" fill="#555">Michael → intramol. aldol</text><text x="402" y="21" fill="#d11">O</text></g>
+  </svg><div class="cap"><b>Robinson in pictures:</b> cyclohexanone + MVK → Michael adduct → intramolecular aldol condensation closes a NEW <b>cyclohexenone ring</b> (octalone). Cyclizations always finish at the enone.</div></div>
   <div class="trap"><b>Grignard vs cuprate on enones:</b> RMgBr → 1,2 (alcohol). R₂CuLi → 1,4 (β-alkyl ketone). The prof tested both side by side — including the one-flask version: 1) R₂CuLi 2) R′-Br → α,β-dialkylation (β from cuprate, α from the alkyl halide trapping the enolate).</div>
+  <p style="margin:10px 0 2px;font-weight:700">1,2 vs 1,4 — SAME enone, two different answers <span class="hy">HIGH YIELD</span></p>
+  <div class="schemepair">
+    <div class="scheme"><svg viewBox="0 0 330 130" width="330">
+      <g stroke="#222" stroke-width="2"><line x1="60" y1="40" x2="86" y2="55"/><line x1="86" y1="55" x2="86" y2="85"/><line x1="86" y1="85" x2="60" y2="100"/><line x1="60" y1="100" x2="34" y2="85"/><line x1="34" y1="85" x2="34" y2="55"/><line x1="34" y1="55" x2="60" y2="40"/><line x1="57" y1="38" x2="57" y2="22"/><line x1="63" y1="38" x2="63" y2="22"/><line x1="80" y1="59" x2="80" y2="81"/><line x1="115" y1="62" x2="175" y2="62" marker-end="url(#rh)"/><line x1="230" y1="40" x2="256" y2="55"/><line x1="256" y1="55" x2="256" y2="85"/><line x1="256" y1="85" x2="230" y2="100"/><line x1="230" y1="100" x2="204" y2="85"/><line x1="204" y1="85" x2="204" y2="55"/><line x1="204" y1="55" x2="230" y2="40"/><line x1="250" y1="59" x2="250" y2="81"/><line x1="230" y1="38" x2="230" y2="26"/><line x1="228" y1="39" x2="210" y2="26"/></g>
+      <g font-size="14" text-anchor="middle"><text x="60" y="16" fill="#d11">O</text><text x="97" y="55" fill="#777" font-size="11">α</text><text x="97" y="92" fill="#777" font-size="11">β</text><text x="145" y="46" font-size="11" fill="#555">1) CH₃MgBr</text><text x="145" y="80" font-size="11" fill="#555">2) H₃O⁺</text><text x="230" y="18" fill="#d11" font-size="13">OH</text><text x="198" y="20" font-size="12">CH₃</text></g>
+    </svg><div class="cap"><b>Grignard = 1,2-addition</b> → allylic 3° <b>alcohol</b> (attacks the C=O directly; ring C=C untouched)</div></div>
+    <div class="scheme"><svg viewBox="0 0 330 130" width="330">
+      <g stroke="#222" stroke-width="2"><line x1="60" y1="40" x2="86" y2="55"/><line x1="86" y1="55" x2="86" y2="85"/><line x1="86" y1="85" x2="60" y2="100"/><line x1="60" y1="100" x2="34" y2="85"/><line x1="34" y1="85" x2="34" y2="55"/><line x1="34" y1="55" x2="60" y2="40"/><line x1="57" y1="38" x2="57" y2="22"/><line x1="63" y1="38" x2="63" y2="22"/><line x1="80" y1="59" x2="80" y2="81"/><line x1="115" y1="62" x2="175" y2="62" marker-end="url(#rh)"/><line x1="230" y1="40" x2="256" y2="55"/><line x1="256" y1="55" x2="256" y2="85"/><line x1="256" y1="85" x2="230" y2="100"/><line x1="230" y1="100" x2="204" y2="85"/><line x1="204" y1="85" x2="204" y2="55"/><line x1="204" y1="55" x2="230" y2="40"/><line x1="227" y1="38" x2="227" y2="22"/><line x1="233" y1="38" x2="233" y2="22"/><line x1="256" y1="85" x2="280" y2="99"/></g>
+      <g font-size="14" text-anchor="middle"><text x="60" y="16" fill="#d11">O</text><text x="97" y="55" fill="#777" font-size="11">α</text><text x="97" y="92" fill="#777" font-size="11">β</text><text x="145" y="46" font-size="11" fill="#555">1) (CH₃)₂CuLi</text><text x="145" y="80" font-size="11" fill="#555">2) H₃O⁺</text><text x="230" y="16" fill="#d11">O</text><text x="296" y="106" font-size="12">CH₃</text></g>
+    </svg><div class="cap"><b>Cuprate = 1,4-addition</b> → β-methyl <b>ketone</b> (CH₃ lands on β-carbon; C=O survives, ring C=C gone)</div></div>
+  </div>
   <div class="trap"><b>The #1 Michael rule in the practice keys:</b> simple ketone/aldehyde enolates are <b>NOT efficient Michael donors</b>. Good donors = doubly-stabilized enolates (malonate, acetoacetate, 1,3-diketones, β-ketoesters, nitro-alkanes) or <b>enamines (Stork)</b>. If the donor side is a plain ketone or aldehyde → the key always switches to a Stork enamine. Good acceptors = α,β-unsaturated ketones, esters, <b>nitriles</b>, and <b>nitro</b> compounds. Malonate anion also opens <b>epoxides at the less-substituted carbon</b> and acylates with RCOCl/anhydrides (21.84).</div>
   <div class="note"><b>Enamines do more than Michael (Ch 19 PPT):</b> ① <b>alkylation</b> — enamine + CH₃X / 1° RX / allylic / benzylic / <b>α-haloketone</b> / <b>α-haloester</b>, then H₃O⁺ → α-alkylated ketone. ② <b>acylation</b> — enamine + RCOCl (or anhydride), then H₃O⁺ → <b>β-DIKETONE</b>. Retro-recognition: <b>α-substituted carbonyl ← enamine alkylation; 1,3-diketone ← enamine acylation; 1,5-dicarbonyl ← enamine Michael (Stork)</b>.</div>
   <div class="note"><b>Prof's 1,2-vs-1,4 sorting rule (2023 lecture):</b> on an α,β-unsaturated carbonyl, <b>Grignard and organolithium attack the carbonyl (1,2)</b>; <b>EVERYTHING else attacks the β-carbon (1,4)</b> — cuprates, CN⁻, RS⁻/SH⁻, amines, enolates, enamines. Neutral nucleophiles lose one H in the product. Stork detail: the enamine adds via its <b>MOST substituted α-carbon</b> (opposite of LDA), and enamine alkylation is the <b>mild alternative to LDA</b> when base-sensitive groups are present.</div>
@@ -368,6 +503,16 @@
     <tr><td><b>40 °C</b> (high T)</td><td><b>1,4-adduct</b> (85%) — thermodynamic</td><td>more substituted (internal) alkene = more stable; equilibrium wins</td></tr>
   </table>
   <div class="note">Both go through the same <b>resonance-stabilized allylic cation</b> (H⁺ adds to a terminal carbon first — Markovnikov to give the allylic cation).</div>
+  <div class="schemepair">
+    <div class="scheme"><svg viewBox="0 0 330 130" width="330">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="85" x2="45" y2="70"/><line x1="22" y1="78" x2="47" y2="63"/><line x1="45" y1="70" x2="70" y2="85"/><line x1="70" y1="85" x2="95" y2="70"/><line x1="72" y1="92" x2="97" y2="77"/><line x1="118" y1="78" x2="163" y2="78" marker-end="url(#rh)"/><line x1="175" y1="85" x2="200" y2="70"/><line x1="177" y1="78" x2="202" y2="63"/><line x1="200" y1="70" x2="225" y2="85"/><line x1="225" y1="85" x2="225" y2="103"/><line x1="225" y1="85" x2="250" y2="70"/></g>
+      <g font-size="14" text-anchor="middle"><text x="140" y="62" font-size="11" fill="#555">HBr, 0 °C</text><text x="225" y="118" fill="#190" font-size="13">Br</text><text x="266" y="66" font-size="13">CH₃</text></g>
+    </svg><div class="cap"><b>0 °C → 1,2-adduct (KINETIC, 71%)</b> — Br⁻ traps the allylic cation where it formed; terminal alkene stays</div></div>
+    <div class="scheme"><svg viewBox="0 0 330 130" width="330">
+      <g stroke="#222" stroke-width="2"><line x1="20" y1="85" x2="45" y2="70"/><line x1="22" y1="78" x2="47" y2="63"/><line x1="45" y1="70" x2="70" y2="85"/><line x1="70" y1="85" x2="95" y2="70"/><line x1="72" y1="92" x2="97" y2="77"/><line x1="118" y1="78" x2="163" y2="78" marker-end="url(#rh)"/><line x1="190" y1="84" x2="212" y2="70"/><line x1="215" y1="68" x2="240" y2="84"/><line x1="218" y1="61" x2="243" y2="77"/><line x1="240" y1="84" x2="265" y2="70"/><line x1="265" y1="70" x2="265" y2="52"/></g>
+      <g font-size="14" text-anchor="middle"><text x="140" y="62" font-size="11" fill="#555">HBr, 40 °C</text><text x="176" y="92" font-size="13">CH₃</text><text x="265" y="46" fill="#190" font-size="13">Br</text></g>
+    </svg><div class="cap"><b>40 °C → 1,4-adduct (THERMODYNAMIC, 85%)</b> — internal (more substituted) alkene is more stable; equilibrium wins</div></div>
+  </div>
 
   <h3>Diels–Alder — worth ~45 pts on 2025 Form A <span class="hy">HIGH YIELD</span></h3>
   <div class="card">
@@ -381,6 +526,10 @@
     <tr><td><b>Diene stereochem</b></td><td>(E,E)-diene → both substituents <b>cis</b> in ring; (E,Z) → trans</td><td>draw the s-cis diene, "outside" groups end up cis</td></tr>
     <tr><td><b>s-cis requirement</b></td><td>diene locked s-trans = NO reaction; cyclopentadiene (locked s-cis) = super reactive</td><td></td></tr>
   </table>
+  <div class="scheme"><svg viewBox="0 0 620 150" width="620">
+    <g stroke="#222" stroke-width="2"><line x1="25" y1="95" x2="50" y2="80"/><line x1="27" y1="88" x2="52" y2="73"/><line x1="50" y1="80" x2="75" y2="95"/><line x1="75" y1="95" x2="100" y2="80"/><line x1="77" y1="102" x2="102" y2="87"/><line x1="145" y1="95" x2="170" y2="80"/><line x1="147" y1="88" x2="172" y2="73"/><line x1="170" y1="80" x2="195" y2="95"/><line x1="195" y1="93" x2="195" y2="71"/><line x1="201" y1="93" x2="201" y2="71"/><line x1="200" y1="97" x2="220" y2="107"/><line x1="245" y1="88" x2="300" y2="88" marker-end="url(#rh)"/><line x1="360" y1="60" x2="386" y2="75"/><line x1="386" y1="75" x2="386" y2="105"/><line x1="386" y1="105" x2="360" y2="120"/><line x1="360" y1="120" x2="334" y2="105"/><line x1="334" y1="105" x2="334" y2="75"/><line x1="334" y1="75" x2="360" y2="60"/><line x1="357" y1="112" x2="338" y2="101"/><line x1="360" y1="58" x2="380" y2="46"/><line x1="377" y1="44" x2="377" y2="24"/><line x1="383" y1="44" x2="383" y2="24"/></g>
+    <g font-size="14" text-anchor="middle"><text x="120" y="92">+</text><text x="198" y="65" fill="#d11">O</text><text x="231" y="113">H</text><text x="272" y="72" font-size="11" fill="#555">heat</text><text x="380" y="18" fill="#d11">O</text><text x="398" y="50">H</text><text x="440" y="80" font-size="12" fill="#777">new ring: 2 new σ bonds,</text><text x="440" y="98" font-size="12" fill="#777">C=C lands opposite the EWG</text></g>
+  </svg><div class="cap"><b>Diels–Alder in pictures:</b> butadiene (s-cis!) + acrolein (EWG dienophile) → <b>cyclohexene-carbaldehyde</b>. One concerted step — diene ends bond to the dienophile's two alkene carbons.</div></div>
   <div class="note"><b>Exam patterns seen:</b> DA questions are written with "<b>heat</b>" or "<b>150 °C</b>" over the arrow. The prof also tests <b>intramolecular DA</b> ("1 single reagent" = a triene folding onto itself, Exam 3 2023) and exocyclic dienes (2-vinylidene-cyclohexane types). The dienal + HBr question (2025 p9): conjugated dienal + HBr, <b>heat → 1,4-type (thermodynamic) α-bromo product</b>; <b>cold → 1,2 (kinetic)</b> — Form A said heat, Form B said cold, same skeleton.</div>
   <div class="trap"><b>How to nail the regio question:</b> draw partial charges. δ− carbon of diene (the one pushed on by OMe) bonds to δ+ β-carbon of the dienophile. Prof's review shows exactly this with MeO-diene + acrolein → "para" major.</div>
   <div class="note"><b>Two practice-set extras:</b> ① <b>AlCl₃ (Lewis acid) accelerates Diels–Alder</b> — it coordinates the dienophile's C=O, making it more electron-poor, so the reaction runs at lower temperature (same product). ② A macrocyclic ring with a cyclohexene inside can come from an <b>intramolecular DA</b> of a long-chain triene — and very high heat runs it backwards (<b>retro-DA</b> spits the diene + dienophile back out).</div>
@@ -392,43 +541,127 @@
   <div class="note">Past mechanism questions: <b>Claisen</b> (2025 A &amp; B), <b>aldol condensation</b> (2025 C), <b>ester from acid chloride</b> (2023). Keys grade arrow start/end points. Practice on blank paper daily Jun 23–25.</div>
   <div class="note"><b>Straight from the prof's 2023 lectures:</b> expect ~32 fill-ins + 1–2 mechanisms + 1 retrosynthesis (+ bonus). The mechanism pool he stated out loud: <b>acid chloride + nucleophile (Ch 18)</b> and <b>aldol or Claisen (Ch 19)</b>. He will <b>NOT ask Robinson or Michael as a drawn mechanism</b> ("too complex") — those show up as fill-ins and the retrosynthesis instead. Mechanism golden rules: never SN2 at a carbonyl (always two steps through the tetrahedral intermediate); under acid never generate a base, under base never generate an acid; negative Nu = 2 steps, neutral Nu = 3 (extra proton transfer); pyridine just scavenges HCl, never in the product.</div>
 
-  <h3>Master template: nucleophilic acyl substitution (5 steps max)</h3>
+  <div class="win" style="border-left-color:var(--accent);background:#ede9fe">
+    <b>🔑 Dr. Hickey's master rule (from his email) — learn this and every acyl mechanism falls out of it.</b><br>
+    Every acyl-substitution mechanism you need is built from the same <b>5 potential steps</b>, in order:
+    <p style="text-align:center;font-size:1.15rem;font-weight:800;letter-spacing:1px;margin:10px 0;color:var(--mech)">PT → NA → PT → LLG → PT</p>
+    <table style="margin-top:4px">
+      <tr><th>Code</th><th>Step</th><th>What the arrows do</th></tr>
+      <tr><td><b>PT</b></td><td>Proton transfer</td><td>add or remove a proton (protonate the C=O to activate it, or deprotonate at the end)</td></tr>
+      <tr><td><b>NA</b></td><td>Nucleophilic attack</td><td>nucleophile → carbonyl carbon; C=O π → O. Forms the tetrahedral intermediate</td></tr>
+      <tr><td><b>PT</b></td><td>Proton transfer</td><td>shuffle a proton to turn the leaving group into a <i>good</i> one</td></tr>
+      <tr><td><b>LLG</b></td><td>Loss of leaving group</td><td>O lone pair reforms C=O; C–LG bond breaks. LG = Cl⁻ (acid chloride), ⁻OR (ester), ⁻OCOR (anhydride)</td></tr>
+      <tr><td><b>PT</b></td><td>Proton transfer</td><td>deprotonate to give the neutral product</td></tr>
+    </table>
+  </div>
+
+  <h3>How many of the 5 steps? — it depends ONLY on the nucleophile</h3>
+  <table style="text-align:center">
+    <tr><th style="text-align:left">Nucleophile / conditions</th><th>Steps used</th><th># steps</th><th>Example</th></tr>
+    <tr><td style="text-align:left"><b>Acid-catalyzed</b> attack</td><td>PT–NA–PT–LLG–PT (<b>all 5</b>)</td><td>5</td><td>Fischer esterification; acid hydrolysis of an ester</td></tr>
+    <tr><td style="text-align:left"><b>Neutral</b> nucleophile (H₂O, R′OH, RNH₂)</td><td>NA–PT–LLG–PT → <b>steps 2, 3, 4, 5</b><sup>*</sup></td><td>3–4</td><td>amide from an amine; neutral ester hydrolysis</td></tr>
+    <tr><td style="text-align:left"><b>Negative</b> (anionic) nucleophile (⁻OH, ⁻OR, H⁻)</td><td>NA–LLG → <b>steps 2 and 4 only</b></td><td>2</td><td>saponification; hydride/Grignard on the acyl carbon</td></tr>
+  </table>
+  <div class="note"><sup>*</sup>The prof states neutral attack uses "steps 2, 4, and 5." That's the clean count when the leaving group doesn't need a separate protonation; if it does (e.g. a neutral ⁻OR leaving), you'll also use the middle PT — so neutral = 3 steps minimum. <b>Negative nucleophile = exactly steps 2 and 4 (NA then LLG)</b>, because an anion needs no protons added and the product is taken to workup. <b>Acid-catalyzed = all 5.</b></div>
+  <div class="trap"><b>Two hard rules behind the table:</b> under <b>acid</b> you never make a free base (no ⁻OH/⁻OR floating around) → you protonate first; under <b>base</b> you never make a free acid (no H⁺) → you skip the protonation steps. And <b>never</b> do a one-step SN2 at a carbonyl carbon — always go through the tetrahedral intermediate (NA then LLG are two separate steps).</div>
+
+  <h3>Master template: nucleophilic acyl substitution (the 5 steps, drawn)</h3>
   <div class="card">
-    <div class="mechstep"><div class="n">1</div><div><b>Protonate C=O</b> (acidic conditions only) — arrow from C=O oxygen lone pair to H⁺</div></div>
-    <div class="mechstep"><div class="n">2</div><div><b>Nucleophile attacks carbonyl C</b> → tetrahedral intermediate (arrow Nu → C, arrow C=O π → O)</div></div>
-    <div class="mechstep"><div class="n">3</div><div><b>Proton transfer</b> (remove extra H from Nu if it was neutral)</div></div>
-    <div class="mechstep"><div class="n">4</div><div><b>Reform C=O, expel LG</b> (arrow O lone pair → C=O, arrow C–LG → LG)</div></div>
-    <div class="mechstep"><div class="n">5</div><div><b>Deprotonate</b> if needed to give neutral product</div></div>
+    <div class="mechstep"><div class="n">1</div><div><b>PT — Protonate C=O</b> (acidic conditions only) — arrow from C=O oxygen lone pair to H⁺</div></div>
+    <div class="mechstep"><div class="n">2</div><div><b>NA — Nucleophile attacks carbonyl C</b> → tetrahedral intermediate (arrow Nu → C, arrow C=O π → O)</div></div>
+    <div class="mechstep"><div class="n">3</div><div><b>PT — Proton transfer</b> (remove extra H from a neutral Nu, or protonate the LG)</div></div>
+    <div class="mechstep"><div class="n">4</div><div><b>LLG — Reform C=O, expel leaving group</b> (arrow O lone pair → C=O, arrow C–LG → LG)</div></div>
+    <div class="mechstep"><div class="n">5</div><div><b>PT — Deprotonate</b> if needed to give neutral product</div></div>
     <p style="margin-top:8px"><b>Basic conditions: skip 1 &amp; 3 → only 2-4-5 (3 steps).</b> Acid chloride + alcohol: skip ALL proton transfers except final deprotonation (reagent not acidic, Cl⁻ great LG, Nu deprotonated last) → 3 steps. <b>N nucleophiles attack first regardless of conditions.</b> Never SN2 at a carbonyl carbon.</p>
   </div>
 
   <h3>① Claisen condensation (NaOEt, then H₃O⁺) — 2025 A &amp; B</h3>
   <div class="card">
     <div class="mechstep"><div class="n">1</div><div>EtO⁻ removes an <b>α-H</b> from ester #1 → ester enolate (arrow base→H, arrow C–H→α-C, push into C=O making enolate resonance)</div></div>
+    <div class="mpanel"><svg viewBox="0 0 560 140" width="560">
+      <g stroke="#222" stroke-width="2"><line x1="119" y1="95" x2="141" y2="84"/><line x1="143" y1="82" x2="172" y2="64"/><line x1="169" y1="62" x2="169" y2="38"/><line x1="175" y1="62" x2="175" y2="38"/><line x1="175" y1="64" x2="203" y2="80"/><line x1="258" y1="64" x2="296" y2="64" marker-end="url(#rh)"/><line x1="318" y1="86" x2="348" y2="68"/><line x1="322" y1="92" x2="352" y2="74"/><line x1="352" y1="68" x2="352" y2="44"/><line x1="353" y1="70" x2="381" y2="86"/></g>
+      <g font-size="14" text-anchor="middle"><text x="40" y="76">Et</text><text x="58" y="76" fill="#d11">O</text><text x="68" y="66" font-size="11">−</text><text x="112" y="100">H</text><text x="138" y="100" fill="#777" font-size="11">α</text><text x="172" y="32" fill="#d11">O</text><text x="213" y="86" fill="#d11">O</text><text x="236" y="86" font-size="13">Et</text><text x="306" y="98" font-size="13">H₂C</text><text x="352" y="38" fill="#d11">O</text><text x="362" y="30" font-size="11">−</text><text x="391" y="92" fill="#d11">O</text><text x="413" y="92" font-size="13">Et</text><text x="478" y="70" font-size="13" fill="#777">+ EtOH</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M70,72 Q90,88 102,94" marker-end="url(#ah)"/><path d="M128,88 Q142,64 154,68" marker-end="url(#ah)"/><path d="M167,48 Q156,40 164,33" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 1:</b> arrow from EtO⁻ lone pair → α-H · arrow from C–H bond → into the C–C(=O) bond · arrow from C=O π → O. Gives the ester enolate.</div></div>
     <div class="mechstep"><div class="n">2</div><div>Enolate α-C attacks <b>carbonyl C of ester #2</b> → tetrahedral alkoxide intermediate</div></div>
+    <div class="mpanel"><svg viewBox="0 0 640 150" width="640">
+      <g stroke="#222" stroke-width="2"><line x1="66" y1="86" x2="92" y2="70"/><line x1="92" y1="66" x2="92" y2="42"/><line x1="98" y1="66" x2="98" y2="42"/><line x1="96" y1="68" x2="123" y2="84"/><line x1="240" y1="84" x2="263" y2="70"/><line x1="265" y1="64" x2="265" y2="40"/><line x1="271" y1="64" x2="271" y2="40"/><line x1="269" y1="68" x2="296" y2="84"/><line x1="350" y1="70" x2="388" y2="70" marker-end="url(#rh)"/><line x1="442" y1="57" x2="457" y2="67"/><line x1="460" y1="68" x2="460" y2="46"/><line x1="457" y1="73" x2="435" y2="88"/><line x1="463" y1="71" x2="488" y2="56"/><line x1="488" y1="56" x2="513" y2="70"/><line x1="510" y1="68" x2="510" y2="44"/><line x1="516" y1="68" x2="516" y2="44"/><line x1="515" y1="72" x2="538" y2="85"/></g>
+      <g font-size="14" text-anchor="middle"><text x="50" y="92" font-size="13">H₂C</text><text x="30" y="82" font-size="11">−</text><text x="95" y="36" fill="#d11">O</text><text x="133" y="90" fill="#d11">O</text><text x="155" y="90" font-size="13">Et</text><text x="226" y="90" font-size="13">CH₃</text><text x="268" y="34" fill="#d11">O</text><text x="306" y="90" fill="#d11">O</text><text x="328" y="90" font-size="13">Et</text><text x="430" y="54" font-size="13">CH₃</text><text x="460" y="40" fill="#d11">O</text><text x="470" y="33" font-size="11">−</text><text x="425" y="94" fill="#d11">O</text><text x="404" y="94" font-size="13">Et</text><text x="488" y="50" fill="#777" font-size="10">α</text><text x="513" y="36" fill="#d11">O</text><text x="548" y="91" fill="#d11">O</text><text x="569" y="91" font-size="13">Et</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M62,80 Q150,28 256,58" marker-end="url(#ah)"/><path d="M263,52 Q251,42 258,35" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 2:</b> arrow from the carbanion α-C → carbonyl C of ester #2 · arrow from that C=O π → O. Gives the tetrahedral alkoxide.</div></div>
     <div class="mechstep"><div class="n">3</div><div>Alkoxide reforms C=O and <b>kicks out OEt⁻</b> → β-ketoester</div></div>
+    <div class="mpanel"><svg viewBox="0 0 620 150" width="620">
+      <g stroke="#222" stroke-width="2"><line x1="122" y1="59" x2="137" y2="69"/><line x1="140" y1="70" x2="140" y2="48"/><line x1="137" y1="75" x2="115" y2="90"/><line x1="143" y1="73" x2="168" y2="58"/><line x1="168" y1="58" x2="193" y2="72"/><line x1="190" y1="70" x2="190" y2="46"/><line x1="196" y1="70" x2="196" y2="46"/><line x1="195" y1="74" x2="218" y2="87"/><line x1="290" y1="70" x2="328" y2="70" marker-end="url(#rh)"/><line x1="366" y1="86" x2="391" y2="70"/><line x1="391" y1="66" x2="391" y2="42"/><line x1="397" y1="66" x2="397" y2="42"/><line x1="395" y1="70" x2="419" y2="86"/><line x1="419" y1="86" x2="444" y2="70"/><line x1="444" y1="66" x2="444" y2="42"/><line x1="450" y1="66" x2="450" y2="42"/><line x1="448" y1="70" x2="472" y2="86"/></g>
+      <g font-size="14" text-anchor="middle"><text x="110" y="56" font-size="13">CH₃</text><text x="140" y="42" fill="#d11">O</text><text x="150" y="35" font-size="11">−</text><text x="105" y="96" fill="#d11">O</text><text x="84" y="96" font-size="13">Et</text><text x="193" y="40" fill="#d11">O</text><text x="228" y="93" fill="#d11">O</text><text x="249" y="93" font-size="13">Et</text><text x="352" y="92" font-size="13">CH₃</text><text x="394" y="36" fill="#d11">O</text><text x="447" y="36" fill="#d11">O</text><text x="482" y="92" fill="#d11">O</text><text x="503" y="92" font-size="13">Et</text><text x="560" y="75" font-size="13" fill="#777">+ ⁻OEt</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M150,46 Q160,58 148,66" marker-end="url(#ah)"/><path d="M126,84 Q114,86 110,91" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 3:</b> arrow from O⁻ lone pair → back down to C (reform C=O) · arrow from the C–OEt bond → onto the leaving O. Gives the β-ketoester + EtO⁻.</div></div>
     <div class="mechstep"><div class="n">4</div><div>EtO⁻ removes the doubly-α H (between the two C=O) → stabilized anion <i>(this step makes the reaction go!)</i></div></div>
     <div class="mechstep"><div class="n">5</div><div>Workup H₃O⁺ reprotonates → neutral β-ketoester</div></div>
+    <div class="mpanel"><svg viewBox="0 0 640 150" width="640">
+      <g stroke="#222" stroke-width="2"><line x1="44" y1="86" x2="69" y2="70"/><line x1="69" y1="66" x2="69" y2="42"/><line x1="75" y1="66" x2="75" y2="42"/><line x1="73" y1="70" x2="97" y2="86"/><line x1="97" y1="86" x2="97" y2="106"/><line x1="97" y1="86" x2="122" y2="70"/><line x1="122" y1="66" x2="122" y2="42"/><line x1="128" y1="66" x2="128" y2="42"/><line x1="126" y1="70" x2="150" y2="86"/><line x1="212" y1="70" x2="250" y2="70" marker-end="url(#rh)"/><line x1="284" y1="86" x2="309" y2="70"/><line x1="309" y1="66" x2="309" y2="42"/><line x1="315" y1="66" x2="315" y2="42"/><line x1="313" y1="70" x2="337" y2="86"/><line x1="337" y1="86" x2="362" y2="70"/><line x1="362" y1="66" x2="362" y2="42"/><line x1="368" y1="66" x2="368" y2="42"/><line x1="366" y1="70" x2="390" y2="86"/></g>
+      <g font-size="14" text-anchor="middle"><text x="30" y="92" font-size="13">CH₃</text><text x="72" y="36" fill="#d11">O</text><text x="97" y="120">H</text><text x="125" y="36" fill="#d11">O</text><text x="160" y="92" fill="#d11">O</text><text x="181" y="92" font-size="13">Et</text><text x="38" y="130" font-size="13">Et</text><text x="56" y="130" fill="#d11">O</text><text x="66" y="121" font-size="11">−</text><text x="231" y="58" font-size="11" fill="#555">then H₃O⁺</text><text x="270" y="92" font-size="13">CH₃</text><text x="312" y="36" fill="#d11">O</text><text x="365" y="36" fill="#d11">O</text><text x="400" y="92" fill="#d11">O</text><text x="421" y="92" font-size="13">Et</text><text x="500" y="75" font-size="13" fill="#777">β-ketoester (neutral)</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M66,124 Q78,124 88,118" marker-end="url(#ah)"/><path d="M101,98 Q112,88 112,80" marker-end="url(#ah)"/><path d="M118,52 Q108,42 115,35" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Steps 4–5:</b> EtO⁻ pulls the doubly-α H (between the two C=O) → stabilized anion drives the equilibrium; H₃O⁺ workup returns the neutral β-ketoester.</div></div>
   </div>
 
   <h3>② Aldol addition (NaOH) — 2025 C part 1</h3>
   <div class="card">
     <div class="mechstep"><div class="n">1</div><div>HO⁻ removes α-H → enolate</div></div>
+    <div class="mpanel"><svg viewBox="0 0 560 140" width="560">
+      <g stroke="#222" stroke-width="2"><line x1="119" y1="95" x2="141" y2="84"/><line x1="143" y1="82" x2="172" y2="64"/><line x1="169" y1="62" x2="169" y2="38"/><line x1="175" y1="62" x2="175" y2="38"/><line x1="176" y1="66" x2="198" y2="78"/><line x1="258" y1="64" x2="296" y2="64" marker-end="url(#rh)"/><line x1="318" y1="86" x2="348" y2="68"/><line x1="322" y1="92" x2="352" y2="74"/><line x1="352" y1="68" x2="352" y2="44"/><line x1="353" y1="70" x2="375" y2="82"/></g>
+      <g font-size="14" text-anchor="middle"><text x="44" y="76">H</text><text x="58" y="76" fill="#d11">O</text><text x="68" y="66" font-size="11">−</text><text x="112" y="100">H</text><text x="138" y="100" fill="#777" font-size="11">α</text><text x="172" y="32" fill="#d11">O</text><text x="207" y="86">H</text><text x="306" y="98" font-size="13">H₂C</text><text x="352" y="38" fill="#d11">O</text><text x="362" y="30" font-size="11">−</text><text x="384" y="90">H</text><text x="460" y="70" font-size="13" fill="#777">+ H₂O</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M70,72 Q90,88 102,94" marker-end="url(#ah)"/><path d="M128,88 Q142,64 154,68" marker-end="url(#ah)"/><path d="M167,48 Q156,40 164,33" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 1:</b> HO⁻ lone pair → α-H · C–H bond → into C–C(=O) · C=O π → O. Gives the aldehyde enolate.</div></div>
     <div class="mechstep"><div class="n">2</div><div>Enolate α-C attacks carbonyl C of the second aldehyde → alkoxide</div></div>
+    <div class="mpanel"><svg viewBox="0 0 640 150" width="640">
+      <g stroke="#222" stroke-width="2"><line x1="66" y1="86" x2="92" y2="70"/><line x1="92" y1="66" x2="92" y2="42"/><line x1="98" y1="66" x2="98" y2="42"/><line x1="97" y1="70" x2="119" y2="82"/><line x1="240" y1="84" x2="263" y2="70"/><line x1="265" y1="64" x2="265" y2="40"/><line x1="271" y1="64" x2="271" y2="40"/><line x1="270" y1="68" x2="292" y2="80"/><line x1="350" y1="70" x2="388" y2="70" marker-end="url(#rh)"/><line x1="424" y1="86" x2="449" y2="70"/><line x1="449" y1="68" x2="449" y2="46"/><line x1="453" y1="70" x2="477" y2="86"/><line x1="477" y1="86" x2="502" y2="70"/><line x1="502" y1="66" x2="502" y2="42"/><line x1="508" y1="66" x2="508" y2="42"/><line x1="507" y1="72" x2="529" y2="84"/></g>
+      <g font-size="14" text-anchor="middle"><text x="50" y="92" font-size="13">H₂C</text><text x="30" y="82" font-size="11">−</text><text x="95" y="36" fill="#d11">O</text><text x="128" y="88">H</text><text x="226" y="90" font-size="13">CH₃</text><text x="268" y="34" fill="#d11">O</text><text x="301" y="86">H</text><text x="410" y="92" font-size="13">CH₃</text><text x="449" y="40" fill="#d11">O</text><text x="459" y="33" font-size="11">−</text><text x="477" y="102" fill="#777" font-size="10">α</text><text x="505" y="36" fill="#d11">O</text><text x="538" y="90">H</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M62,80 Q150,28 256,58" marker-end="url(#ah)"/><path d="M263,52 Q251,42 258,35" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 2:</b> enolate α-C → carbonyl C of aldehyde #2 · C=O π → O. New C–C bond; gives the alkoxide.</div></div>
     <div class="mechstep"><div class="n">3</div><div>Alkoxide grabs H from H₂O → β-hydroxy aldehyde (+ regenerated HO⁻)</div></div>
+    <div class="mpanel"><svg viewBox="0 0 640 150" width="640">
+      <g stroke="#222" stroke-width="2"><line x1="44" y1="86" x2="69" y2="70"/><line x1="69" y1="68" x2="69" y2="46"/><line x1="73" y1="70" x2="97" y2="86"/><line x1="97" y1="86" x2="122" y2="70"/><line x1="122" y1="66" x2="122" y2="42"/><line x1="128" y1="66" x2="128" y2="42"/><line x1="127" y1="72" x2="149" y2="84"/><line x1="124" y1="24" x2="140" y2="24"/><line x1="155" y1="28" x2="163" y2="28"/><line x1="210" y1="64" x2="248" y2="64" marker-end="url(#rh)"/><line x1="294" y1="86" x2="319" y2="70"/><line x1="319" y1="68" x2="319" y2="48"/><line x1="323" y1="70" x2="347" y2="86"/><line x1="347" y1="86" x2="372" y2="70"/><line x1="372" y1="66" x2="372" y2="42"/><line x1="378" y1="66" x2="378" y2="42"/><line x1="377" y1="72" x2="399" y2="84"/></g>
+      <g font-size="14" text-anchor="middle"><text x="30" y="92" font-size="13">CH₃</text><text x="69" y="40" fill="#d11">O</text><text x="79" y="33" font-size="11">−</text><text x="118" y="20">H</text><text x="148" y="29" fill="#d11">O</text><text x="170" y="33">H</text><text x="125" y="36" fill="#d11">O</text><text x="158" y="90">H</text><text x="280" y="92" font-size="13">CH₃</text><text x="319" y="42" fill="#d11" font-size="13">OH</text><text x="303" y="62" fill="#777" font-size="10">β</text><text x="347" y="103" fill="#777" font-size="10">α</text><text x="375" y="36" fill="#d11">O</text><text x="408" y="90">H</text><text x="510" y="72" font-size="13" fill="#777">+ HO⁻ regenerated</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M76,42 Q92,24 110,21" marker-end="url(#ah)"/><path d="M132,21 Q139,14 144,20" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 3:</b> alkoxide O⁻ lone pair → H of H–OH · O–H bond → onto water's O. Gives the β-hydroxy aldehyde (the "aldol").</div></div>
   </div>
 
   <h3>③ Aldol condensation = addition + E1cb dehydration (NaOH, heat)</h3>
   <div class="card">
     <div class="mechstep"><div class="n">4</div><div>HO⁻ removes another α-H from the aldol product → enolate</div></div>
+    <div class="mpanel"><svg viewBox="0 0 640 150" width="640">
+      <g stroke="#222" stroke-width="2"><line x1="44" y1="86" x2="69" y2="70"/><line x1="69" y1="68" x2="69" y2="50"/><line x1="73" y1="70" x2="97" y2="86"/><line x1="97" y1="86" x2="97" y2="106"/><line x1="97" y1="86" x2="122" y2="70"/><line x1="122" y1="66" x2="122" y2="42"/><line x1="128" y1="66" x2="128" y2="42"/><line x1="127" y1="72" x2="149" y2="84"/><line x1="220" y1="64" x2="258" y2="64" marker-end="url(#rh)"/><line x1="294" y1="86" x2="319" y2="70"/><line x1="319" y1="68" x2="319" y2="50"/><line x1="323" y1="70" x2="347" y2="86"/><line x1="347" y1="86" x2="372" y2="70"/><line x1="372" y1="66" x2="372" y2="42"/><line x1="378" y1="66" x2="378" y2="42"/><line x1="377" y1="72" x2="399" y2="84"/></g>
+      <g font-size="14" text-anchor="middle"><text x="30" y="92" font-size="13">CH₃</text><text x="69" y="44" fill="#d11" font-size="13">OH</text><text x="97" y="120">H</text><text x="111" y="100" fill="#777" font-size="11">α</text><text x="125" y="36" fill="#d11">O</text><text x="158" y="90">H</text><text x="40" y="130">H</text><text x="54" y="130" fill="#d11">O</text><text x="64" y="121" font-size="11">−</text><text x="280" y="92" font-size="13">CH₃</text><text x="319" y="44" fill="#d11" font-size="13">OH</text><text x="347" y="106" font-size="13">⁻</text><text x="375" y="36" fill="#d11">O</text><text x="408" y="90">H</text><text x="500" y="72" font-size="13" fill="#777">+ H₂O</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M64,124 Q76,124 88,118" marker-end="url(#ah)"/><path d="M101,98 Q112,88 112,80" marker-end="url(#ah)"/><path d="M118,52 Q108,42 115,35" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 4:</b> HO⁻ → α-H of the aldol product · C–H bond → into C–C(=O). Gives the enolate (carbanion shown) — the β-OH is still there.</div></div>
     <div class="mechstep"><div class="n">5</div><div>Enolate pushes out the β-OH⁻ (arrow: C–C π forms, C–OH bond breaks, OH⁻ leaves) → conjugated enone. <b>This is E1cb, NOT E2</b> — two separate steps.</div></div>
+    <div class="mpanel"><svg viewBox="0 0 640 150" width="640">
+      <g stroke="#222" stroke-width="2"><line x1="44" y1="86" x2="69" y2="70"/><line x1="69" y1="68" x2="69" y2="50"/><line x1="73" y1="70" x2="97" y2="86"/><line x1="97" y1="86" x2="122" y2="70"/><line x1="122" y1="66" x2="122" y2="42"/><line x1="128" y1="66" x2="128" y2="42"/><line x1="127" y1="72" x2="149" y2="84"/><line x1="220" y1="64" x2="258" y2="64" marker-end="url(#rh)"/><line x1="294" y1="86" x2="316" y2="72"/><line x1="319" y1="70" x2="344" y2="86"/><line x1="322" y1="63" x2="347" y2="79"/><line x1="344" y1="86" x2="366" y2="72"/><line x1="369" y1="68" x2="369" y2="44"/><line x1="375" y1="68" x2="375" y2="44"/><line x1="374" y1="74" x2="396" y2="86"/></g>
+      <g font-size="14" text-anchor="middle"><text x="30" y="92" font-size="13">CH₃</text><text x="69" y="44" fill="#d11" font-size="13">OH</text><text x="83" y="62" fill="#777" font-size="10">β</text><text x="97" y="104" font-size="13">⁻</text><text x="111" y="98" fill="#777" font-size="10">α</text><text x="125" y="36" fill="#d11">O</text><text x="158" y="90">H</text><text x="280" y="92" font-size="13">CH₃</text><text x="372" y="38" fill="#d11">O</text><text x="405" y="92">H</text><text x="490" y="72" font-size="13" fill="#777">+ OH⁻</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M99,96 Q88,90 86,80" marker-end="url(#ah)"/><path d="M73,58 Q84,50 76,44" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 5 (E1cb):</b> carbanion lone pair → into the α–β C–C bond (new π) · C–OH bond → onto the leaving OH⁻. Gives the conjugated enone (here: crotonaldehyde).</div></div>
   </div>
 
   <h3>④ Esterification via acid chloride (CH₃OH, pyridine) — 2023</h3>
   <div class="card">
     <div class="mechstep"><div class="n">1</div><div>CH₃OH oxygen attacks carbonyl C of RCOCl → tetrahedral intermediate (O still has its H, now positive)</div></div>
+    <div class="mpanel"><svg viewBox="0 0 600 150" width="600">
+      <g stroke="#222" stroke-width="2"><line x1="40" y1="86" x2="65" y2="70"/><line x1="65" y1="66" x2="65" y2="42"/><line x1="71" y1="66" x2="71" y2="42"/><line x1="70" y1="72" x2="93" y2="86"/><line x1="200" y1="70" x2="238" y2="70" marker-end="url(#rh)"/><line x1="290" y1="59" x2="307" y2="69"/><line x1="310" y1="68" x2="310" y2="46"/><line x1="313" y1="75" x2="337" y2="90"/><line x1="307" y1="75" x2="283" y2="90"/><line x1="272" y1="100" x2="272" y2="110"/></g>
+      <g font-size="14" text-anchor="middle"><text x="30" y="92">R</text><text x="68" y="36" fill="#d11">O</text><text x="105" y="93" fill="#190" font-size="13">Cl</text><text x="148" y="124" font-size="13">CH₃</text><text x="172" y="124" fill="#d11">O</text><text x="188" y="124">H</text><text x="280" y="56">R</text><text x="310" y="40" fill="#d11">O</text><text x="320" y="33" font-size="11">−</text><text x="349" y="96" fill="#190" font-size="13">Cl</text><text x="272" y="96" fill="#d11">O</text><text x="283" y="86" font-size="11">+</text><text x="246" y="96" font-size="13">CH₃</text><text x="272" y="124">H</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M170,112 Q120,104 74,78" marker-end="url(#ah)"/><path d="M64,52 Q54,42 61,35" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 1:</b> arrow from CH₃OH oxygen lone pair → carbonyl C · arrow from C=O π → O. Gives the tetrahedral intermediate (positively charged O — it kept its H).</div></div>
     <div class="mechstep"><div class="n">2</div><div>Reform C=O, expel Cl⁻</div></div>
+    <div class="mpanel"><svg viewBox="0 0 600 150" width="600">
+      <g stroke="#222" stroke-width="2"><line x1="100" y1="59" x2="117" y2="69"/><line x1="120" y1="68" x2="120" y2="46"/><line x1="123" y1="75" x2="147" y2="90"/><line x1="117" y1="75" x2="93" y2="90"/><line x1="82" y1="100" x2="82" y2="110"/><line x1="210" y1="70" x2="248" y2="70" marker-end="url(#rh)"/><line x1="290" y1="86" x2="315" y2="70"/><line x1="312" y1="68" x2="312" y2="44"/><line x1="318" y1="68" x2="318" y2="44"/><line x1="317" y1="72" x2="340" y2="86"/><line x1="350" y1="96" x2="350" y2="106"/></g>
+      <g font-size="14" text-anchor="middle"><text x="90" y="56">R</text><text x="120" y="40" fill="#d11">O</text><text x="130" y="33" font-size="11">−</text><text x="159" y="96" fill="#190" font-size="13">Cl</text><text x="82" y="96" fill="#d11">O</text><text x="93" y="86" font-size="11">+</text><text x="56" y="96" font-size="13">CH₃</text><text x="82" y="124">H</text><text x="280" y="92">R</text><text x="315" y="38" fill="#d11">O</text><text x="350" y="92" fill="#d11">O</text><text x="361" y="82" font-size="11">+</text><text x="374" y="92" font-size="13">CH₃</text><text x="350" y="120">H</text><text x="470" y="75" font-size="13" fill="#190">+ Cl⁻</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M128,44 Q138,56 126,66" marker-end="url(#ah)"/><path d="M137,84 Q148,82 153,90" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 2:</b> arrow from O⁻ lone pair → C (reform C=O) · arrow from the C–Cl bond → onto Cl. Cl⁻ leaves; O is still protonated (+).</div></div>
     <div class="mechstep"><div class="n">3</div><div>Pyridine removes the O–H → neutral ester. <i>(No protonation steps: reagent not acidic, Cl⁻ excellent LG.)</i> Stepwise, never concerted.</div></div>
+    <div class="mpanel"><svg viewBox="0 0 600 150" width="600">
+      <g stroke="#222" stroke-width="2"><line x1="40" y1="86" x2="65" y2="70"/><line x1="62" y1="68" x2="62" y2="44"/><line x1="68" y1="68" x2="68" y2="44"/><line x1="67" y1="72" x2="90" y2="86"/><line x1="100" y1="96" x2="100" y2="106"/><line x1="210" y1="70" x2="248" y2="70" marker-end="url(#rh)"/><line x1="290" y1="86" x2="315" y2="70"/><line x1="312" y1="68" x2="312" y2="44"/><line x1="318" y1="68" x2="318" y2="44"/><line x1="317" y1="72" x2="340" y2="86"/></g>
+      <g font-size="14" text-anchor="middle"><text x="30" y="92">R</text><text x="65" y="38" fill="#d11">O</text><text x="100" y="92" fill="#d11">O</text><text x="111" y="82" font-size="11">+</text><text x="124" y="92" font-size="13">CH₃</text><text x="100" y="120">H</text><text x="148" y="135" font-size="13">py–</text><text x="168" y="135" fill="#15c" font-size="13">N:</text><text x="280" y="92">R</text><text x="315" y="38" fill="#d11">O</text><text x="350" y="92" fill="#d11">O</text><text x="374" y="92" font-size="13">CH₃</text><text x="470" y="75" font-size="13" fill="#777">+ py–H⁺ (ester done)</text></g>
+      <g stroke="#c2410c" stroke-width="1.8" fill="none"><path d="M160,126 Q134,124 110,119" marker-end="url(#ah)"/><path d="M104,100 Q112,96 106,90" marker-end="url(#ah)"/></g>
+    </svg><div class="cap"><b>Step 3:</b> arrow from pyridine N lone pair → the O–H proton · arrow from O–H bond → onto O (kills the + charge). Neutral ester. Pyridine never appears in the product.</div></div>
   </div>
 
   <h3>④b Acid chloride hydrolysis (H₂O, pyridine) — 2023 YELLOW mechanism, 24 pts</h3>
@@ -461,7 +694,7 @@
     <button class="btn-plain" id="fcShuffle">🔀 Shuffle</button>
   </div>
   <div class="statline"><span>Card <b id="fcPos">1</b> / <b id="fcTotal">0</b></span></div>
-  <div id="fcCard"><div class="side" id="fcSide">QUESTION — click to flip</div><div class="content" id="fcContent"></div></div>
+  <div id="fcCard"><div class="side" id="fcSide">QUESTION — click to flip</div><div id="fcImg"></div><div class="content" id="fcContent"></div></div>
   <div class="fcbtns">
     <button class="btn-plain" id="fcPrev">← Prev</button>
     <button class="btn-flip" id="fcFlip">Flip</button>
@@ -490,7 +723,7 @@
     <div class="sb"><div class="big2" id="qzLeft">–</div>remaining</div>
   </div>
   <div class="progressbar"><div id="qzBar" style="width:0%"></div></div>
-  <div id="fcCardQ" style="display:none" class=""><div id="qzCard" style="min-height:220px;background:var(--card);border:2px solid var(--border);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;cursor:pointer;text-align:center;margin:16px 0;box-shadow:0 4px 12px rgba(0,0,0,.08)"><div class="side" id="qzSide" style="font-size:.75rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:12px">QUESTION — click to reveal answer</div><div class="content" id="qzContent" style="font-size:1.15rem;font-weight:600;white-space:pre-line"></div></div>
+  <div id="fcCardQ" style="display:none" class=""><div id="qzCard" style="min-height:220px;background:var(--card);border:2px solid var(--border);border-radius:16px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;cursor:pointer;text-align:center;margin:16px 0;box-shadow:0 4px 12px rgba(0,0,0,.08)"><div class="side" id="qzSide" style="font-size:.75rem;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-bottom:12px">QUESTION — click to reveal answer</div><div id="qzImg"></div><div class="content" id="qzContent" style="font-size:1.15rem;font-weight:600;white-space:pre-line"></div></div>
   <div class="fcbtns qbtns" id="qzGradeBtns" style="visibility:hidden">
     <button class="btn-got" id="qzGot">✓ Got it</button>
     <button class="btn-miss" id="qzMiss">✗ Missed — recycle</button>
@@ -516,21 +749,39 @@ document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()
   window.scrollTo(0,0);
 }));
 
+// ---------- flashcard structure pictures (shown above the question) ----------
+function _acyl(lab,col,x){return '<svg viewBox="0 0 180 95" width="170"><g stroke="#222" stroke-width="2"><line x1="40" y1="62" x2="65" y2="48"/><line x1="62" y1="46" x2="62" y2="24"/><line x1="68" y1="46" x2="68" y2="24"/><line x1="66" y1="50" x2="90" y2="62"/></g><g font-size="14" text-anchor="middle"><text x="65" y="18" fill="#d11">O</text><text x="30" y="68">R</text><text x="'+x+'" y="68" fill="'+col+'">'+lab+'</text></g></svg>'}
+const IMG={
+acid:_acyl('OH','#d11',104),
+acyl:_acyl('Cl','#190',102),
+ester:_acyl('OEt','#d11',108),
+amide:_acyl('NH₂','#15c',110),
+mket:_acyl('CH₃','#222',108),
+ket:_acyl('R′','#222',103),
+nitrile:'<svg viewBox="0 0 180 95" width="170"><g stroke="#222" stroke-width="2"><line x1="35" y1="55" x2="61" y2="55"/><line x1="63" y1="49" x2="95" y2="49"/><line x1="63" y1="55" x2="95" y2="55"/><line x1="63" y1="61" x2="95" y2="61"/></g><g font-size="14" text-anchor="middle"><text x="25" y="61">R</text><text x="107" y="61" fill="#15c">N</text></g></svg>',
+enone:'<svg viewBox="0 0 170 125" width="150"><g stroke="#222" stroke-width="2"><line x1="85" y1="40" x2="111" y2="55"/><line x1="111" y1="55" x2="111" y2="85"/><line x1="111" y1="85" x2="85" y2="100"/><line x1="85" y1="100" x2="59" y2="85"/><line x1="59" y1="85" x2="59" y2="55"/><line x1="59" y1="55" x2="85" y2="40"/><line x1="82" y1="38" x2="82" y2="22"/><line x1="88" y1="38" x2="88" y2="22"/><line x1="105" y1="59" x2="105" y2="81"/></g><g text-anchor="middle"><text x="85" y="16" fill="#d11" font-size="14">O</text><text x="122" y="58" fill="#777" font-size="11">α</text><text x="122" y="92" fill="#777" font-size="11">β</text></g></svg>',
+butadiene:'<svg viewBox="0 0 180 95" width="170"><g stroke="#222" stroke-width="2"><line x1="35" y1="65" x2="60" y2="50"/><line x1="37" y1="58" x2="62" y2="43"/><line x1="60" y1="50" x2="85" y2="65"/><line x1="85" y1="65" x2="110" y2="50"/><line x1="87" y1="72" x2="112" y2="57"/></g></svg>',
+etoac2:'<svg viewBox="0 0 220 100" width="200"><g stroke="#222" stroke-width="2"><line x1="58" y1="68" x2="83" y2="52"/><line x1="80" y1="50" x2="80" y2="28"/><line x1="86" y1="50" x2="86" y2="28"/><line x1="85" y1="54" x2="107" y2="66"/></g><g font-size="14" text-anchor="middle"><text x="22" y="62" font-size="13">2 ×</text><text x="44" y="74" font-size="13">CH₃</text><text x="83" y="22" fill="#d11">O</text><text x="117" y="72" fill="#d11" font-size="13">O</text><text x="135" y="72" font-size="13">Et</text></g></svg>',
+acetald2:'<svg viewBox="0 0 220 100" width="200"><g stroke="#222" stroke-width="2"><line x1="58" y1="68" x2="83" y2="52"/><line x1="80" y1="50" x2="80" y2="28"/><line x1="86" y1="50" x2="86" y2="28"/><line x1="85" y1="54" x2="107" y2="66"/></g><g font-size="14" text-anchor="middle"><text x="22" y="62" font-size="13">2 ×</text><text x="44" y="74" font-size="13">CH₃</text><text x="83" y="22" fill="#d11">O</text><text x="115" y="72">H</text></g></svg>',
+malonate:'<svg viewBox="0 0 240 105" width="220"><g stroke="#222" stroke-width="2"><line x1="48" y1="70" x2="70" y2="56"/><line x1="67" y1="54" x2="67" y2="32"/><line x1="73" y1="54" x2="73" y2="32"/><line x1="70" y1="56" x2="95" y2="72"/><line x1="95" y1="72" x2="120" y2="56"/><line x1="117" y1="54" x2="117" y2="32"/><line x1="123" y1="54" x2="123" y2="32"/><line x1="122" y1="58" x2="142" y2="70"/></g><g font-size="14" text-anchor="middle"><text x="17" y="76" font-size="13">Et</text><text x="35" y="76" fill="#d11" font-size="13">O</text><text x="70" y="26" fill="#d11">O</text><text x="120" y="26" fill="#d11">O</text><text x="152" y="76" fill="#d11" font-size="13">O</text><text x="170" y="76" font-size="13">Et</text><text x="95" y="95" fill="#777" font-size="10">α = the doubly-activated CH₂</text></g></svg>',
+acac:'<svg viewBox="0 0 240 100" width="220"><g stroke="#222" stroke-width="2"><line x1="40" y1="70" x2="62" y2="56"/><line x1="59" y1="54" x2="59" y2="32"/><line x1="65" y1="54" x2="65" y2="32"/><line x1="62" y1="56" x2="87" y2="72"/><line x1="87" y1="72" x2="112" y2="56"/><line x1="109" y1="54" x2="109" y2="32"/><line x1="115" y1="54" x2="115" y2="32"/><line x1="114" y1="58" x2="134" y2="70"/></g><g font-size="14" text-anchor="middle"><text x="24" y="76" font-size="13">CH₃</text><text x="62" y="26" fill="#d11">O</text><text x="112" y="26" fill="#d11">O</text><text x="144" y="76" fill="#d11" font-size="13">O</text><text x="162" y="76" font-size="13">Et</text></g></svg>'
+};
+
 // ---------- card data ----------
 // ch: '18','19','20','M'; hy: high-yield
 const CARDS=[
 // CH 18
-{ch:'18',hy:1,q:"RCOOH + SOCl₂ → ?",a:"Acid chloride (RCOCl).\nThe ONLY way up the reactivity ladder."},
+{ch:'18',hy:1,img:IMG.acid,q:"This + SOCl₂ → ?",a:"Acid chloride (RCOCl).\nThe ONLY way up the reactivity ladder."},
 {ch:'18',hy:1,q:"Rank reactivity: ester, amide, acid chloride, anhydride, nitrile",a:"Acid chloride > anhydride >> ester > amide >> nitrile.\nConvert DOWN only; amide is a dead end."},
-{ch:'18',hy:1,q:"RCOCl + 1) xs CH₃MgBr 2) H₂O → ?",a:"3° alcohol with TWO new CH₃ groups.\nGrignard adds twice — cannot stop at ketone."},
-{ch:'18',hy:1,q:"RCOCl + (CH₃)₂CuLi → ?",a:"KETONE (adds once only).\nGilman/cuprate = the only way to stop at the ketone."},
-{ch:'18',hy:1,q:"RCOCl + 1) LTBA (LiAlH(O-t-Bu)₃) 2) H₂O → ?",a:"ALDEHYDE — bulky hydride delivers only 1 H, stops at aldehyde."},
-{ch:'18',hy:1,q:"Ester + 1) DIBAH 2) H₂O → ?",a:"ALDEHYDE.\nDIBAH = partial reduction of esters (LTBA does acid chlorides)."},
+{ch:'18',hy:1,img:IMG.acyl,q:"This + 1) xs CH₃MgBr 2) H₂O → ?",a:"3° alcohol with TWO new CH₃ groups.\nGrignard adds twice — cannot stop at ketone."},
+{ch:'18',hy:1,img:IMG.acyl,q:"This + (CH₃)₂CuLi → ?",a:"KETONE (adds once only).\nGilman/cuprate = the only way to stop at the ketone."},
+{ch:'18',hy:1,img:IMG.acyl,q:"This + 1) LTBA (LiAlH(O-t-Bu)₃) 2) H₂O → ?",a:"ALDEHYDE — bulky hydride delivers only 1 H, stops at aldehyde."},
+{ch:'18',hy:1,img:IMG.ester,q:"This + 1) DIBAH 2) H₂O → ?",a:"ALDEHYDE.\nDIBAH = partial reduction of esters (LTBA does acid chlorides)."},
 {ch:'18',hy:1,q:"Which functional groups can NaBH₄ reduce?",a:"Ketones, aldehydes → alcohols, and acid chlorides → 1° alcohol.\nNOT acids, esters, amides, or nitriles."},
 {ch:'18',hy:1,q:"Enone (C=C–C=O) + H₂, Pd/C vs + NaBH₄ — what's different?",a:"H₂/Pd-C reduces the C=C (and eventually C=O) → saturated.\nNaBH₄/LAH touch ONLY the C=O, leave the alkene alone.\nNeed to keep the double bond? Use the hydride."},
 {ch:'18',hy:1,q:"Can H₂/Raney Ni or H₂/Pd-C reduce esters or carboxylic acids?",a:"NO — not effective on esters, acids, acid chlorides, amides, nitriles (at exam conditions).\nThey're for C=C, C≡C, and aldehyde/ketone C=O."},
 {ch:'18',hy:1,q:"LTBA vs DIBAH — which partial reduction does each do?",a:"LTBA (LiAlH(O-t-Bu)₃): ACID CHLORIDE → aldehyde.\nDIBAH (1 eq, −78 °C): ESTER → aldehyde.\nBoth = bulky hydride, one H, stops at aldehyde."},
-{ch:'18',hy:1,q:"Amide + 1) xs LiAlH₄ 2) H₂O → ?",a:"AMINE (C=O becomes CH₂).\nThe exception! Every other derivative gives 1° alcohol with LAH."},
+{ch:'18',hy:1,img:IMG.amide,q:"This + 1) xs LiAlH₄ 2) H₂O → ?",a:"AMINE (C=O becomes CH₂).\nThe exception! Every other derivative gives 1° alcohol with LAH."},
 {ch:'18',hy:0,q:"Nitrile + 1) CH₃CH₂MgBr 2) H₃O⁺ → ?",a:"KETONE (R-CO-Et).\nGrignard adds once to C≡N → imine salt → hydrolyzed to ketone on workup."},
 {ch:'18',hy:0,q:"Nitrile + 1) xs LiAlH₄ 2) H₂O → ?",a:"1° amine: R-CH₂-NH₂"},
 {ch:'18',hy:0,q:"Nitrile + H₃O⁺, heat → ?",a:"Carboxylic acid (RCOOH).\nAlso works with 1) NaOH, heat 2) H₃O⁺."},
@@ -545,30 +796,43 @@ const CARDS=[
 {ch:'18',hy:0,q:"Ester + 1) xs LiAlH₄ 2) H₂O → ?",a:"1° alcohol (from acyl half) + R′OH (from alkoxy half).\nLAH fully reduces every derivative except amides(→amine)."},
 {ch:'18',hy:0,q:"Ester + 1) xs PhMgBr 2) H₂O → ?",a:"3° alcohol with TWO phenyl groups (R-C(OH)Ph₂) + R′OH.\nGrignard adds twice to esters too."},
 {ch:'18',hy:0,q:"How do you destroy ANY acid derivative back to RCOOH?",a:"H₂O — plus H⁺ and/or heat for the less reactive ones (esters, amides, nitriles)."},
+// CH 18 — mechanism framework (prof's PT-NA-PT-LLG-PT rule)
+{ch:'18',hy:1,q:"Spell out the prof's 5-step acyl-substitution skeleton.",a:"PT – NA – PT – LLG – PT\nProton transfer · Nucleophilic Attack · Proton transfer · Loss of Leaving Group · Proton transfer."},
+{ch:'18',hy:1,q:"Acid-CATALYZED nucleophilic acyl substitution uses how many of the 5 steps?",a:"ALL 5 (PT-NA-PT-LLG-PT).\nUnder acid you must protonate first (never make a free base)."},
+{ch:'18',hy:1,q:"A NEUTRAL nucleophile (H₂O, ROH, RNH₂) uses which steps?",a:"Prof: steps 2, 4, 5 (NA, LLG, final PT) — i.e. attack, lose LG, deprotonate.\nNo initial protonation needed; ~3 steps."},
+{ch:'18',hy:1,q:"A NEGATIVE (anionic) nucleophile (⁻OH, ⁻OR, H⁻) uses which steps?",a:"Steps 2 and 4 ONLY: NA then LLG.\nAn anion needs no protons added; product taken to workup."},
+{ch:'18',hy:1,q:"Why never draw a one-step SN2 at a carbonyl carbon?",a:"The C=O always goes through a tetrahedral intermediate: NA first (Nu→C, π→O), THEN LLG.\nTwo separate steps, never concerted."},
+{ch:'18',hy:0,q:"Under ACID conditions, what must you never generate? Under BASE?",a:"Acid: never generate a free base (⁻OH/⁻OR) → protonate first.\nBase: never generate a free acid (H⁺) → skip the protonation steps."},
+{ch:'18',hy:1,q:"WHY does LTBA stop at the aldehyde but LAH doesn't?",a:"LTBA = LiAlH(O-t-Bu)₃ is bulky/stingy — delivers ONE hydride, then the tetrahedral intermediate collapses to aldehyde and the bulk prevents a 2nd delivery.\nLAH delivers hydride again → all the way to 1° alcohol."},
+{ch:'18',hy:1,q:"WHY does a Gilman cuprate stop at the ketone but a Grignard doesn't?",a:"Cuprate (R′₂CuLi) is a soft, less reactive carbon nucleophile: adds ONCE, ketone survives.\nGrignard is hot — attacks the ketone again → 3° alcohol with TWO R′."},
+{ch:'18',hy:0,q:"Which leaving group leaves in: acid chloride? ester? anhydride?",a:"Acid chloride → Cl⁻ (best LG, most reactive).\nEster → ⁻OR (alkoxide).\nAnhydride → ⁻OCOR (carboxylate)."},
+{ch:'18',hy:0,q:"Acid chloride + alcohol + pyridine: how many mechanism steps, and what is pyridine's job?",a:"3 steps (NA, LLG, final deprotonation). No protonations needed — Cl⁻ is a great LG.\nPyridine just scavenges HCl; it NEVER appears in the product."},
+{ch:'18',hy:0,q:"On the mechanism question, where do the points actually come from?",a:"~4 pts/step: 1–2 pts per ARROW, 2 pts per structure. Draw every arrow origin→destination, even if unsure of a structure. Don't skip the proton transfers."},
+{ch:'18',hy:1,q:"You're given a product and asked for the reagent (reverse fill-in). What 2 questions do you ask?",a:"1) Did I go DOWN the reactivity ladder? (legal) or UP? (need hydrolyze→SOCl₂ first)\n2) Did the carbon count or oxidation state change? → tells you hydride vs Grignard vs cuprate vs nucleophile."},
 // CH 19
 {ch:'19',hy:1,q:"LDA at −78 °C vs NaH at 25 °C: which enolate does each give?",a:"LDA −78° = KINETIC = less substituted α-carbon (irreversible, bulky).\nNaH 25° = THERMODYNAMIC = more substituted α-carbon."},
 {ch:'19',hy:1,q:"Why is NaOEt 'good enough' for malonic/acetoacetic esters but not for ketones?",a:"Dicarbonyl α-H (pKa≈11) is more acidic than EtOH → complete enolate with NaOEt.\nKetone (pKa≈20) only partially deprotonates → need LDA/NaH for complete, clean enolate."},
-{ch:'19',hy:1,q:"Methyl ketone + 1) xs Br₂, OH⁻ 2) H₃O⁺ → ?",a:"HALOFORM: carboxylic acid + CHBr₃.\nCH₃ gets polybrominated then cleaved. Recognize: methyl ketone + excess halogen + base."},
+{ch:'19',hy:1,img:IMG.mket,q:"This (methyl ketone) + 1) xs Br₂, OH⁻ 2) H₃O⁺ → ?",a:"HALOFORM: carboxylic acid + CHBr₃.\nCH₃ gets polybrominated then cleaved. Recognize: methyl ketone + excess halogen + base."},
 {ch:'19',hy:0,q:"Ketone + [H₃O⁺], Br₂ → ? (regiochemistry!)",a:"MONO α-bromination at the MORE substituted α-carbon (acid-catalyzed, via enol)."},
 {ch:'19',hy:1,q:"Ketone + 1) [H₃O⁺], Br₂ 2) pyridine → ?",a:"α,β-UNSATURATED ketone (enone).\nBrominate α, then E2 with base. Route to enones!"},
 {ch:'19',hy:0,q:"RCOOH + 1) Br₂, PBr₃ 2) H₂O → ?",a:"α-bromo carboxylic acid (Hell–Volhard–Zelinsky)."},
-{ch:'19',hy:1,q:"2 acetaldehyde + NaOH/H₂O (cold) → ? Then heat?",a:"Cold: β-hydroxy aldehyde (ALDOL ADDITION).\nHeat: α,β-unsaturated aldehyde + H₂O (CONDENSATION, E1cb)."},
+{ch:'19',hy:1,img:IMG.acetald2,q:"These two aldehydes + NaOH/H₂O (cold) → ? Then heat?",a:"Cold: β-hydroxy aldehyde (ALDOL ADDITION).\nHeat: α,β-unsaturated aldehyde + H₂O (CONDENSATION, E1cb)."},
 {ch:'19',hy:1,q:"Recipe for a clean crossed (directed) aldol between a ketone and an aldehyde?",a:"1) LDA, −78 °C on the ketone (make the nucleophile)\n2) add the aldehyde\n3) H₂O.\n(Or: one partner has no α-H, e.g. benzaldehyde.)"},
 {ch:'19',hy:0,q:"1,5-diketone (2,6-heptanedione) + NaOH, heat → ?",a:"Intramolecular aldol condensation → 5- or 6-membered cyclic ENONE (here: 3-methylcyclopent-2-enone)."},
-{ch:'19',hy:1,q:"2 ethyl acetate + 1) NaOEt 2) H₃O⁺ → ?",a:"CLAISEN → ethyl acetoacetate (β-ketoester).\nα-C of one ester bonds to carbonyl of other; OEt⁻ leaves; final deprotonation of doubly-α H drives it."},
+{ch:'19',hy:1,img:IMG.etoac2,q:"These two esters + 1) NaOEt 2) H₃O⁺ → ?",a:"CLAISEN → ethyl acetoacetate (β-ketoester).\nα-C of one ester bonds to carbonyl of other; OEt⁻ leaves; final deprotonation of doubly-α H drives it."},
 {ch:'19',hy:0,q:"What's a Dieckmann cyclization?",a:"INTRAmolecular Claisen: 1,6- or 1,7-diester + 1) NaOEt 2) H₃O⁺ → 5- or 6-membered ring β-ketoester."},
-{ch:'19',hy:1,q:"Diethyl malonate + 1) NaOEt 2) BnBr 3) H₃O⁺, heat → ?",a:"PhCH₂CH₂COOH — substituted acetic ACID.\nMalonic ester synthesis: alkylate, hydrolyze, decarboxylate (β-keto acid → 6-membered TS → CO₂)."},
-{ch:'19',hy:1,q:"Ethyl acetoacetate + 1) NaOEt 2) RBr 3) H₃O⁺, heat → ?",a:"R-CH₂-CO-CH₃ — substituted METHYL KETONE (acetone derivative).\nMalonic→acid; acetoacetic→ketone."},
+{ch:'19',hy:1,img:IMG.malonate,q:"This + 1) NaOEt 2) BnBr 3) H₃O⁺, heat → ?",a:"PhCH₂CH₂COOH — substituted acetic ACID.\nMalonic ester synthesis: alkylate, hydrolyze, decarboxylate (β-keto acid → 6-membered TS → CO₂)."},
+{ch:'19',hy:1,img:IMG.acac,q:"This + 1) NaOEt 2) RBr 3) H₃O⁺, heat → ?",a:"R-CH₂-CO-CH₃ — substituted METHYL KETONE (acetone derivative).\nMalonic→acid; acetoacetic→ketone."},
 {ch:'19',hy:0,q:"When does decarboxylation happen?",a:"H₃O⁺ + heat, ONLY for carboxylic acids with a C=O at the β position (β-keto acids, malonic diacids).\nGoes through a 6-membered cyclic transition state, lose CO₂."},
 {ch:'19',hy:0,q:"What alkyl halides work for enolate alkylation?",a:"Methyl, 1°, allylic, benzylic only — it's SN2.\nNever 3°, aryl, or vinyl halides."},
-{ch:'19',hy:1,q:"Enone + 1) CH₃MgBr 2) H₃O⁺ vs enone + 1) (CH₃)₂CuLi 2) H₃O⁺?",a:"Grignard: 1,2-addition → allylic 3° alcohol.\nCuprate: 1,4-(conjugate) addition → β-methyl ketone.\nMg=1,2 / Cu=1,4!"},
+{ch:'19',hy:1,img:IMG.enone,q:"This + 1) CH₃MgBr 2) H₃O⁺ — vs — + 1) (CH₃)₂CuLi 2) H₃O⁺?",a:"Grignard: 1,2-addition → allylic 3° alcohol.\nCuprate: 1,4-(conjugate) addition → β-methyl ketone.\nMg=1,2 / Cu=1,4!"},
 {ch:'19',hy:1,q:"Stork enamine synthesis — three steps?",a:"1) ketone + R₂NH, [H⁺], (−H₂O) → ENAMINE\n2) + α,β-unsaturated carbonyl (Michael at β-C)\n3) H₃O⁺ hydrolysis → 1,5-dicarbonyl."},
 {ch:'19',hy:0,q:"Michael reaction: best nucleophiles and base?",a:"STABILIZED enolates (malonate, acetoacetate, 1,3-diketones) + weak base (NaOEt/KOH).\nAdd to the β-carbon of the enone → 1,5-dicarbonyl."},
 {ch:'19',hy:1,q:"Robinson annulation = ? + ? → ?",a:"Ketone (enolate) + enone (like MVK), NaOH/heat.\nMichael addition THEN intramolecular aldol condensation → new CYCLOHEXENONE ring."},
 {ch:'19',hy:0,q:"Enone + 1) Et₂CuLi 2) MeI → ?",a:"α,β-dialkylation: Et at β (cuprate 1,4), the resulting enolate is alkylated by MeI at α."},
 // CH 20
 {ch:'20',hy:0,q:"3-bromo-1-butene (allylic halide) + t-BuOK → ?",a:"1,3-butadiene (conjugated diene, E2).\nVicinal dihalides need 2 eq t-BuOK (double E2)."},
-{ch:'20',hy:1,q:"Butadiene + HBr at 0 °C vs at 40 °C — major products?",a:"0 °C: 1,2-adduct (KINETIC, 71%) — Nu traps cation fast.\n40 °C: 1,4-adduct (THERMODYNAMIC, 85%) — internal (more substituted) alkene is more stable.\nBoth via the resonance-stabilized allylic cation."},
+{ch:'20',hy:1,img:IMG.butadiene,q:"This + HBr at 0 °C vs at 40 °C — major products?",a:"0 °C: 1,2-adduct (KINETIC, 71%) — Nu traps cation fast.\n40 °C: 1,4-adduct (THERMODYNAMIC, 85%) — internal (more substituted) alkene is more stable.\nBoth via the resonance-stabilized allylic cation."},
 {ch:'20',hy:1,q:"Diels-Alder: what does the diene need? What makes a good dienophile?",a:"Diene: s-CIS conformation, electron-RICH (EDG helps).\nDienophile: electron-POOR (EWG: CHO, COOR, CN, NO₂).\nConcerted, one step, heat."},
 {ch:'20',hy:1,q:"DA with a cis-disubstituted dienophile → stereochem of product?",a:"Substituents stay CIS in the ring (trans stays trans) + enantiomer.\nConcerted = suprafacial = stereospecific."},
 {ch:'20',hy:1,q:"Cyclopentadiene + maleic-type dienophile: endo or exo product?",a:"ENDO major — the EWG tucks under the new ring (secondary orbital overlap).\n'Endo is in.'"},
@@ -588,8 +852,8 @@ const CARDS=[
 {ch:'20',hy:0,q:"What does '1 single reagent' + 150 °C over a triene mean on this prof's exams?",a:"INTRAMOLECULAR Diels-Alder — the molecule folds and reacts with itself → bicyclic product."},
 {ch:'M',hy:1,q:"MECHANISM: RCOCl + H₂O/pyridine → RCOOH (2023 YELLOW, 24 pts)",a:"1) H₂O attacks carbonyl C → tetrahedral intermediate (positive O)\n2) reform C=O, expel Cl⁻\n3) pyridine removes O–H → acid.\nMechanism rubric: points per ARROW — draw every one, origin to tip."},
 // PRACTICE-KEY ADDITIONS (June 10 deep read)
-{ch:'18',hy:1,q:"Nitrile + 1) DIBAH (1 eq, −78°C) 2) H₂O → ?",a:"ALDEHYDE (RCHO).\nDIBAH does ester→aldehyde AND nitrile→aldehyde (via imine, hydrolyzed on workup)."},
-{ch:'18',hy:1,q:"Amide + DIBAH → ?",a:"NO REACTION — practice-key trap!\nAmides only reduce with xs LiAlH₄ (→ amine, C=O becomes CH₂)."},
+{ch:'18',hy:1,img:IMG.nitrile,q:"This + 1) DIBAH (1 eq, −78°C) 2) H₂O → ?",a:"ALDEHYDE (RCHO).\nDIBAH does ester→aldehyde AND nitrile→aldehyde (via imine, hydrolyzed on workup)."},
+{ch:'18',hy:1,img:IMG.amide,q:"This + DIBAH → ?",a:"NO REACTION — practice-key trap!\nAmides only reduce with xs LiAlH₄ (→ amine, C=O becomes CH₂)."},
 {ch:'18',hy:0,q:"Acid chloride + LiAlH(OCH₃)₃ → ?",a:"ALDEHYDE — it's an LTBA equivalent.\nAny bulky tri-alkoxy aluminum hydride = one stingy hydride, stops at aldehyde."},
 {ch:'18',hy:0,q:"1° amide → nitrile: two reagent choices?",a:"SOCl₂ — or acetic anhydride + heat (both dehydrate the amide).\nReverse: nitrile + H₂O/H⁺ partial → amide, full → RCOOH."},
 {ch:'18',hy:0,q:"Ester + 2 eq CH₃Li, then H₂O → ?",a:"3° alcohol with two CH₃ groups — organolithiums behave like Grignards on esters (add twice).\nFormate ester (HCO₂R) → 2° alcohol."},
@@ -618,18 +882,29 @@ const CARDS=[
 {ch:'19',hy:0,q:"pKa lightning round: β-ketoester, malonate, EtOH, ketone, ester α-H?",a:"β-ketoester ≈ 10.7 < malonate ≈ 13.3 < EtOH 15.9 < ketone ≈ 20 < ester ≈ 22.\nThat's why NaOEt fully deprotonates dicarbonyls but Claisen needs a full equivalent of base."},
 {ch:'19',hy:0,q:"Make 2-allylcyclopentanone from a diester — route?",a:"1) Dieckmann (NaOEt) on diethyl heptanedioate-type 1,6-diester → cyclic β-ketoester\n2) NaOEt 3) allyl-Br 4) NaOH/H₂O 5) HCl 6) heat (−CO₂).\nAcetoacetic logic works on ANY β-ketoester."},
 // SUMMER 2023 LECTURE ADDITIONS (compressed lecture files)
-{ch:'19',hy:1,q:"Ketone + MCPBA → ? (name + product)",a:"BAEYER–VILLIGER oxidation → ESTER.\nO inserts between C=O and the MORE substituted neighbor.\nMigration order: H > 3° > cyclohexyl > 2° > aryl/benzyl > 1° > methyl.\nAldehyde + MCPBA → carboxylic acid; cyclic ketone → lactone."},
+{ch:'19',hy:1,img:IMG.ket,q:"This + MCPBA → ? (name + product)",a:"BAEYER–VILLIGER oxidation → ESTER.\nO inserts between C=O and the MORE substituted neighbor.\nMigration order: H > 3° > cyclohexyl > 2° > aryl/benzyl > 1° > methyl.\nAldehyde + MCPBA → carboxylic acid; cyclic ketone → lactone."},
 {ch:'19',hy:0,q:"In a Baeyer–Villiger on 2-methylcyclohexanone, which side does the O insert?",a:"Between the C=O and the MORE substituted carbon (the 2-methyl side) → 7-membered lactone.\nMethyl groups essentially never migrate."},
 {ch:'18',hy:1,q:"Make an amide from a carboxylic acid WITHOUT making the acid chloride — reagent?",a:"DCC + the amine.\nDCC converts the acid's OH into an excellent leaving group (O-DCC). Mild — it's how peptide bonds are coupled."},
 {ch:'19',hy:1,q:"Why does a Claisen need TWO α-hydrogens on the starting ester?",a:"The final step — base removing the doubly-α H between the two C=O's — is what drives the equilibrium forward.\nNo second α-H → no driving force → no Claisen."},
 {ch:'19',hy:1,q:"Why can't you use NaOH for a Claisen condensation?",a:"NaOH SAPONIFIES the ester (irreversibly → carboxylate).\nAlways the matching alkoxide: NaOEt/ethyl, NaOMe/methyl, KOtBu/t-butyl."},
-{ch:'19',hy:1,q:"Prof's sorting rule: which nucleophiles do 1,2 vs 1,4 on an enone?",a:"1,2 (carbonyl): Grignard + organolithium ONLY.\n1,4 (β-carbon): EVERYTHING else — cuprates, CN⁻, RS⁻, amines, enolates, enamines.\nNeutral Nu loses one H in the product."},
+{ch:'19',hy:1,img:IMG.enone,q:"Prof's sorting rule: which nucleophiles do 1,2 vs 1,4 on this?",a:"1,2 (carbonyl): Grignard + organolithium ONLY.\n1,4 (β-carbon): EVERYTHING else — cuprates, CN⁻, RS⁻, amines, enolates, enamines.\nNeutral Nu loses one H in the product."},
 {ch:'19',hy:0,q:"Stork enamine vs LDA — which α-carbon does each functionalize?",a:"Enamine → MOST substituted α-carbon.\nLDA → LEAST substituted (kinetic).\nEnamine alkylation = the mild alternative when base-sensitive groups are present."},
 {ch:'19',hy:1,q:"Intramolecular aldol on a molecule with a ketone AND an aldehyde — who attacks whom?",a:"KETONE forms the enolate; it attacks the ALDEHYDE C=O (better electrophile).\nOnly 5- or 6-membered rings form, and cyclizations ALWAYS give the condensation (enone)."},
 {ch:'19',hy:1,q:"When is an aldol ALWAYS a condensation, even without heat?",a:"1) Product would be conjugated (e.g., aryl partner like benzaldehyde)\n2) Intramolecular (cyclization).\nOtherwise: no heat = addition (β-OH), heat = condensation (enone)."},
 {ch:'19',hy:1,q:"Retro-Robinson: which two ring bonds do you break, in order?",a:"Number ring: enone C=O side = C1, C=C at C1–C6.\n① Break C1–C6 (undo aldol) → C6 becomes C=O\n② Break C4–C5 (undo Michael) → C4 side regains C=C (enone acceptor); C5 side = enolate donor."},
 {ch:'18',hy:0,q:"Nylon 6,6 / polyester / Kevlar — what bonds, what monomers?",a:"Nylon 6,6: diacid chloride + diamine → repeating AMIDES (6 C each).\nPolyester: diol + diacid → repeating ESTERS.\nKevlar: aromatic diamine + aromatic diacid (polyamide).\nNeed difunctional monomers on both ends."},
 {ch:'18',hy:0,q:"Aspirin and prodrugs — what's the Ch 18 chemistry?",a:"Aspirin: salicylic acid ACETYLATED by acetic anhydride (ester) — acetylates COX enzyme.\nProdrug: hydrophobic ester tail crosses membrane, saponified inside the cell to release the drug.\nSoap: triester (fat) + NaOH saponification → glycerol + carboxylate salts."},
+// LECTURE ADDITIONS (Jun 9–23 class notes)
+{ch:'18',hy:1,q:"Why is an acid chloride the MOST reactive derivative but an amide the LEAST? (lecture's electronic reason)",a:"Cl is electronegative and does NOT donate electrons back into C=O → carbon stays very electrophilic.\nN in an amide DONATES its lone pair into C=O (resonance) → stabilizes/deactivates the carbonyl → hardest to attack.\nLadder: acid chloride > anhydride >> ester >> amide ≈ nitrile."},
+{ch:'18',hy:1,q:"Functional-group ID trap: what makes something an ESTER vs just a ketone + ether?",a:"In an ester the C=O and the single-bonded O are on the SAME carbon (directly adjacent).\nA ketone and an ether elsewhere in the molecule ≠ ester.\nLactone = cyclic ester; lactam = cyclic amide."},
+{ch:'18',hy:1,q:"What is a β-lactam and why does the exam care?",a:"A 4-membered cyclic amide — the reactive core of PENICILLIN.\nRing strain makes this amide unusually reactive; it acylates (inactivates) a bacterial enzyme.\nNormal amides are the least reactive derivative — the strained ring is the exception."},
+{ch:'18',hy:0,q:"p-aminophenol + acetic anhydride → acetaminophen. Why does the N react, not the phenol OH?",a:"N is a better nucleophile than O → the amine attacks the anhydride first → amide (the N-acetyl product).\nGeneral rule: when both N and O are present, N reacts preferentially."},
+{ch:'18',hy:1,q:"Secondary amine + acid chloride vs secondary amine + ketone — two different products. Which is which?",a:"+ Acid chloride/anhydride → AMIDE (the C has a leaving group, so it leaves).\n+ Ketone/aldehyde → ENAMINE (no leaving group on the carbonyl C → can't substitute → Ch 16 condensation).\nLeaving group present = substitution; absent = enamine."},
+{ch:'18',hy:0,q:"Levodopa (L-DOPA) — what's the Ch 18 'prodrug' logic?",a:"It's a dopamine PRODRUG. As a zwitterion (NH₃⁺ + COO⁻) the net charge cancels → it crosses the blood-brain barrier, then is decarboxylated to dopamine in the brain.\nDopamine itself can't cross; the modified form does."},
+{ch:'18',hy:0,q:"Lab-safety note the prof stressed: why are acid chlorides/anhydrides lachrymators?",a:"They react with the water in your eyes → carboxylic acid → tearing.\nAlways wear goggles. (Conceptual reminder of how fast they react with any H₂O.)"},
+{ch:'19',hy:1,q:"Quantify why the α-C–H is acidic: pKa with 0, 1, and 2 flanking C=O groups?",a:"No carbonyl C–H ≈ 43 (not acidic).\nOne α to C=O ≈ 19–20 (≈ alcohol).\nBetween TWO C=O (β-dicarbonyl) ≈ 9.\nMore flanking carbonyls = more resonance stabilization of the enolate = lower pKa."},
+{ch:'19',hy:1,q:"Which enol-favoring exceptions push keto⇌enol toward the ENOL side?",a:"1) β-dicarbonyls — enol stabilized by a 6-membered intramolecular H-bond.\n2) 1,3-cyclohexanedione type — the enol is AROMATIC (phenol), so it sits almost 100% enol.\nNormally keto wins >99.99%."},
+{ch:'19',hy:0,q:"Self-aldol: why do ketones effectively give 'no reaction' while aldehydes work?",a:"Ketone self-aldol equilibrium gives <20% product (steric + electronic) → treat as NR.\nAldehydes are better electrophiles → self-aldol proceeds.\nFor a crossed aldol WITH a ketone, use a directed aldol (LDA/NaH) instead."},
 // MECHANISMS
 {ch:'M',hy:1,q:"MECHANISM: Claisen (2 EtOAc, 1) NaOEt 2) H₃O⁺) — list the steps.",a:"1) EtO⁻ removes α-H → enolate\n2) enolate attacks carbonyl C of 2nd ester → tetrahedral alkoxide\n3) reform C=O, expel OEt⁻ → β-ketoester\n4) EtO⁻ removes doubly-α H (drives reaction)\n5) H₃O⁺ workup reprotonates."},
 {ch:'M',hy:1,q:"MECHANISM: aldol condensation (NaOH, heat) — including the dehydration type.",a:"1) HO⁻ removes α-H → enolate\n2) enolate attacks carbonyl of partner → alkoxide\n3) alkoxide + H₂O → β-hydroxy carbonyl\n4) HO⁻ removes another α-H → enolate\n5) enolate expels OH⁻ → enone.\nDehydration is E1cb (two steps), NOT E2."},
@@ -651,8 +926,9 @@ function fcRender(){
   const c=fcDeck[fcIdx];
   document.getElementById('fcTotal').textContent=fcDeck.length;
   document.getElementById('fcPos').textContent=fcDeck.length?fcIdx+1:0;
-  if(!c){document.getElementById('fcContent').textContent='No cards';return}
+  if(!c){document.getElementById('fcContent').textContent='No cards';document.getElementById('fcImg').innerHTML='';return}
   document.getElementById('fcSide').textContent=fcFlipped?'ANSWER — click to flip back':'QUESTION — click to flip';
+  document.getElementById('fcImg').innerHTML=(!fcFlipped&&c.img)?c.img:'';
   document.getElementById('fcContent').textContent=(fcFlipped?c.a:c.q)+(c.hy&&!fcFlipped?'  ⭐':'');
   document.getElementById('fcCard').style.borderColor=fcFlipped?'var(--accent2)':'var(--border)';
 }
@@ -682,6 +958,7 @@ function qzRender(){
   document.getElementById('qzDone').style.display='none';
   document.getElementById('fcCardQ').style.display='block';
   document.getElementById('qzSide').textContent=qzRevealed?'ANSWER — grade yourself':'QUESTION — click to reveal answer';
+  document.getElementById('qzImg').innerHTML=(!qzRevealed&&card.img)?card.img:'';
   document.getElementById('qzContent').textContent=qzRevealed?card.a:card.q+(card.hy?'  ⭐':'');
   document.getElementById('qzCard').style.borderColor=qzRevealed?'var(--accent2)':'var(--border)';
   document.getElementById('qzGradeBtns').style.visibility=qzRevealed?'visible':'hidden';
